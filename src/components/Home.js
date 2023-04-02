@@ -4,17 +4,20 @@ import BooksList from "./BooksList";
 import BookModal from "./BookModal";
 
 const Home = () => {
-    const { data: books, isPending, error } = useFetch('https://api.npoint.io/7873dbcb044096724539');
+    const { data: books, isPending, error } = useFetch('https://api.npoint.io/387ac13a260ef4783834');
     const [showModal, setShowModal] = useState(false);
-    function handleButtonClick() {
+    const [selectedBook, setSelectedBook] = useState(null);
+    function handleButtonClick(book) {
+        setSelectedBook(book);
         setShowModal(true);
     }
     function handleCloseModal() {
         setShowModal(false);
+        setSelectedBook(null);
     }
     return (
         <div className="content">
-            {showModal && <BookModal onClose={handleCloseModal} />}
+            {showModal && <BookModal onClose={handleCloseModal} selectedBook={selectedBook} />}
             <div className="intro-banner">
                 <h1>Welcome to ArcBoox</h1>
             </div>

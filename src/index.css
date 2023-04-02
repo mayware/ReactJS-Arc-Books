@@ -133,7 +133,7 @@ body {
 }
 
 .book-store {
-  padding: 1rem;
+  padding: .5rem;
   grid-column: 3/9;
   border-radius: 5px;
   border: 1px solid #343a40;
@@ -153,10 +153,7 @@ body {
 .book-btn {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   flex-direction: column;
-  height: 275px;
-  width: 200px;
   padding: .5rem;
   background: #101010;
   border: 1px solid #343a40;
@@ -169,12 +166,14 @@ body {
 }
 
 .book-poster {
-  max-height: 180px;
+  min-height: 170px;
+  max-height: 250px;
   width: 100%;
   margin-bottom: .5rem;
 }
 
 .book-poster-img {
+  border-radius: 5px;
   height: 100%;
   width: 100%;
   object-fit: fill;
@@ -190,7 +189,7 @@ body {
 
 .book-tile {
   color: #379237;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: .5rem;
 }
@@ -232,7 +231,7 @@ body {
 
 .modal-content {
   position: relative;
-  background: #202020;
+  background: #151515;
   color: #ced4da;
   margin: auto;
   padding: 0;
@@ -299,18 +298,50 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 5px;
   padding: .5rem;
+  background: #101010;
+}
+
+.modal-book-poster {
+  background: #151515;
+  border-radius: 5px;
+  padding: .5rem;
+}
+
+.modal-book-info {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  background: #151515;
+  border-radius: 5px;
+  padding: .5rem;
+}
+
+.modal-book-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #379237;
+}
+
+.modal-book-author {
+  font-size: 16px;
+  font-weight: 800;
+  color: #42378F;
+}
+
+.modal-book-year {
   margin-bottom: .5rem;
-  border: 1px solid #fff;
+  font-size: 14px;
+  font-weight: 700;
+  color: #F53844;
 }
 
 .modal-footer {
   padding: .5rem;
   color: white;
-  border: 1px solid #fff;
 }
 
 .add-to-cart-btn {
-  height: 35px;
+  height: 45px;
   width: 100%;
   border: none;
   border-radius: 5px;
@@ -319,6 +350,12 @@ body {
   font-weight: 700;
   color: #ced4da;
   cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.add-to-cart-btn:hover {
+  background: #00235B;
+  transition: 200ms ease-in-out;
 }
 
 /* Modal */
