@@ -1,21 +1,52 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
     return (
         <header className="navbar">
             <div className="navbar-left">
                 <div className="header-brand-name">
-                    <Link to="/" className="brand-name-link">ArcBoox</Link>
+                    <NavLink to="/" exact className="brand-name-link">
+                        ArcBoox
+                    </NavLink>
                 </div>
                 <div className="header-left-links">
-                    <Link to="/reader" className="reader-link">Reader</Link>
+                    <NavLink
+                        to="/reader"
+                        exact
+                        className="nav-link"
+                        activeClassName="active"
+                    >
+                        <span className="material-symbols-outlined navbar-link-icon">
+                            menu_book
+                        </span>
+                        <span className="navbar-link-span">Reader</span>
+                    </NavLink>
+                    <NavLink
+                        to="/cart"
+                        exact
+                        className="nav-link"
+                        activeClassName="active"
+                    >
+                        <span className="material-symbols-outlined navbar-link-icon">
+                            shelves
+                        </span>
+                        <span className="navbar-link-span">Bookshelf</span>
+                    </NavLink>
                 </div>
             </div>
             <div className="navbar-right">
-                <Link to="cart" className="cart-link">Books cart</Link>
-                <Link to="log" className="log-link">Log out</Link>
+                <NavLink
+                    to="/log"
+                    exact
+                    className="nav-link"
+                    activeClassName="active"
+                >
+                    <span className="material-symbols-outlined navbar-link-icon">logout</span>
+                    <span className="navbar-link-span">Log out</span>
+                </NavLink>
             </div>
         </header>
     );
-}
+};
 
 export default Navbar;

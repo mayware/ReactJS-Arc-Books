@@ -1,10 +1,10 @@
-const BooksList = ({ books, handleButtonClick }) => {
+const BooksList = ({ books, modalBtn }) => {
     return (
         <div className="book-list">
             {books.map((book) => {
                 return (
                     <div className="book-preview" key={book.id}>
-                        <button className="book-btn" onClick={() => handleButtonClick(book)}>
+                        <button className="book-btn" onClick={() => modalBtn(book)}>
                             <div className="book-poster">
                                 <img src={book.image} alt="book-poster" className="book-poster-img" />
                             </div>
