@@ -128,8 +128,8 @@ body {
   width: 250px;
   font-size: 14px;
   padding: 0 1rem 0 1rem;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
   border: 1px solid #343a40;
   background-color: rgba(0, 0, 0, .5);
   color: #adb5bd;
@@ -145,7 +145,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 35px;
-  width: 75px;
+  width: 55px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border: 1px solid #343a40;
@@ -268,7 +268,7 @@ body {
 
 .book-tile {
   color: #379237;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: .5rem;
 }
