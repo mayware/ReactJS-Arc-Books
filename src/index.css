@@ -238,15 +238,18 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: 200ms ease-in-out;
 }
 
 .book-btn:hover {
   box-shadow: 0px 0px 5px #42378F;
+  transition: 200ms ease-in-out;
 }
 
 .book-poster {
-  min-height: 170px;
+  min-height: 250px;
   max-height: 250px;
+  min-width: 185px;
   width: 100%;
   margin-bottom: .5rem;
 }
@@ -259,7 +262,12 @@ body {
 }
 
 .book-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 100%;
+  min-height: 80px;
   border: 1px solid #343a40;
   border-radius: 5px;
   background: #202020;
@@ -267,7 +275,7 @@ body {
 }
 
 .book-tile {
-  color: #379237;
+  color: #fca311;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: .5rem;
@@ -275,7 +283,7 @@ body {
 
 .book-author {
   color: #adb5bd;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
 }
 

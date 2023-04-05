@@ -5,20 +5,20 @@ import BookModal from "./BookModal";
 
 const Home = () => {
     // const { data: books, isPending, error } = useFetch('https://api.npoint.io/387ac13a260ef4783834');
-    const { data: books, isPending, error } = useFetch('https://openlibrary.org/subjects/horror.json');
-    const [subjectBooks, setSubjectBooks] = useState(null);
-    const [searchedBooks, setSearchedBooks] = useState(null);
-
+    // const { data: books, isPending, error } = useFetch('https://openlibrary.org/subjects/horror.json');
     const [showModal, setShowModal] = useState(false);
     const [selectedBook, setSelectedBook] = useState(null);
     const [activeGenre, setActiveGenre] = useState('');
-    const [storeHeader, setStoreHeader] = useState('Mixed genres');
-
+    const [storeHeader, setStoreHeader] = useState('Horror');
+    const { data: books, isPending, error } = useFetch(`https://openlibrary.org/subjects/${storeHeader.toLowerCase()}.json`);
+    const [subjectBooks, setSubjectBooks] = useState(null);
     const [searchValue, setSearchValue] = useState('');
-    const [newUrl, setNewUrl] = useState('');
-    const { data: srchBook } = useFetch(newUrl);
+
+    // const [newUrl, setNewUrl] = useState('');
+    // const { data: srchBook } = useFetch(newUrl);
 
     const handleGenreClick = (genre) => {
+
         setActiveGenre(genre);
         setStoreHeader(genre);
     }
@@ -31,14 +31,14 @@ const Home = () => {
         setShowModal(false);
         setSelectedBook(null);
     }
-    function searchBooks() {
-        setNewUrl(`https://openlibrary.org/subjects/horror.json`);
-    }
+    // function searchBooks() {
+    //     setNewUrl(`https://openlibrary.org/subjects/horror.json`);
+    // }
     useEffect(() => {
         if (books) {
             setSubjectBooks(books.works);
         }
-    }, [books]);
+    }, [books, storeHeader]);
 
 
     return (
@@ -50,10 +50,10 @@ const Home = () => {
             <div className="library-area">
                 <div className="sidenav">
                     <div className="search-box">
-                        <input type="text" className="search-field" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
+                        {/* <input type="text" className="search-field" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
                         <button className="search-btn" onClick={searchBooks}>
                             <span className="material-symbols-outlined">search</span>
-                        </button>
+                        </button> */}
                         {/* <form className="search-form">
                             
                         </form> */}
@@ -81,10 +81,10 @@ const Home = () => {
                             Mistery
                         </button>
                         <button
-                            className={`genre-btn ${activeGenre === 'Historical' ? 'active' : ''}`}
-                            onClick={() => handleGenreClick('Historical')}
+                            className={`genre-btn ${activeGenre === 'History' ? 'active' : ''}`}
+                            onClick={() => handleGenreClick('History')}
                         >
-                            Historical
+                            History
                         </button>
                         <button
                             className={`genre-btn ${activeGenre === 'Fantasy' ? 'active' : ''}`}
@@ -93,10 +93,10 @@ const Home = () => {
                             Fantasy
                         </button>
                         <button
-                            className={`genre-btn ${activeGenre === 'Short stroies' ? 'active' : ''}`}
-                            onClick={() => handleGenreClick('Short stroies')}
+                            className={`genre-btn ${activeGenre === 'Design' ? 'active' : ''}`}
+                            onClick={() => handleGenreClick('Design')}
                         >
-                            Short stroies
+                            Design
                         </button>
                         <button
                             className={`genre-btn ${activeGenre === 'Romance' ? 'active' : ''}`}
@@ -117,10 +117,34 @@ const Home = () => {
                             Thriller
                         </button>
                         <button
-                            className={`genre-btn ${activeGenre === 'Non-fiction' ? 'active' : ''}`}
-                            onClick={() => handleGenreClick('Non-fictionn')}
+                            className={`genre-btn ${activeGenre === 'Mathematics' ? 'active' : ''}`}
+                            onClick={() => handleGenreClick('Mathematics')}
                         >
-                            Non-fiction
+                            Mathematics
+                        </button>
+                        <button
+                            className={`genre-btn ${activeGenre === 'Magic' ? 'active' : ''}`}
+                            onClick={() => handleGenreClick('Magic')}
+                        >
+                            Magic
+                        </button>
+                        <button
+                            className={`genre-btn ${activeGenre === 'Programming' ? 'active' : ''}`}
+                            onClick={() => handleGenreClick('Programming')}
+                        >
+                            Programming
+                        </button>
+                        <button
+                            className={`genre-btn ${activeGenre === 'Poetry' ? 'active' : ''}`}
+                            onClick={() => handleGenreClick('Poetry')}
+                        >
+                            Poetry
+                        </button>
+                        <button
+                            className={`genre-btn ${activeGenre === 'Humor' ? 'active' : ''}`}
+                            onClick={() => handleGenreClick('Humor')}
+                        >
+                            Humor
                         </button>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ const BooksList = ({ subjectBooks, modalBtn }) => {
             {subjectBooks.map((book) => {
                 return (
                     <div className="book-preview" key={book.key}>
-                        <button className="book-btn" onClick={() => modalBtn(book)}>
+                        <button className="book-btn" onClick={() => modalBtn(book)} title={book.title}>
                             <div className="book-poster">
                                 <img src={`https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`} alt="book-poster" className="book-poster-img" />
                             </div>
