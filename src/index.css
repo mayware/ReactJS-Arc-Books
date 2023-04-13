@@ -189,14 +189,9 @@ body {
   box-shadow: 0px 0px 5px #42378F;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
 .library-area {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: 1fr;
   justify-items: center;
   background-image: url('./assets/books-bg.jpg');
   background-attachment: fixed;
@@ -205,10 +200,6 @@ body {
 }
 
 .book-store {
-  grid-column: 2/8;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
   border-radius: 5px;
   background: #101010;
   width: 1000px;
@@ -228,13 +219,6 @@ body {
   border-top-right-radius: 5px;
   border-bottom: 1px solid #343a40;
   background: #151515;
-}
-
-.book-list {
-  display: flex;
-  align-items: center;
-  margin: .5rem;
-  overflow-x: hidden;
 }
 
 .book-btn {
@@ -258,8 +242,7 @@ body {
 .book-cover {
   min-height: 200px;
   height: 250px;
-  max-height: 250px;
-  min-width: 100px;
+  max-height: 200px;
   width: 200px;
   margin-bottom: .5rem;
 }
@@ -276,7 +259,8 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  max-height: 200px;
+  width: 200px;
   min-height: 80px;
   border: 1px solid #343a40;
   border-radius: 5px;
@@ -391,19 +375,27 @@ body {
 
 .modal-body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(8, 1fr);
   gap: 5px;
   padding: .5rem;
   background: #101010;
 }
 
-.modal-book-poster {
+.modal-book-cover {
+  grid-column: 1/4;
   background: #151515;
   border-radius: 5px;
   padding: .5rem;
+  height: 300px;
+}
+
+.modal-book-cover-img {
+  height: 100%;
+  width: 100%;
 }
 
 .modal-book-info {
+  grid-column: 4/9;
   display: flex;
   align-items: flex-start;
   flex-direction: column;

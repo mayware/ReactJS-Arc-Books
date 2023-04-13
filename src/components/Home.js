@@ -27,6 +27,7 @@ const Home = () => {
     useEffect(() => {
         if (books) {
             setSubjectBooks(books.works);
+            console.log(books.works);
         }
     }, [books, storeHeader]);
 
@@ -34,9 +35,9 @@ const Home = () => {
     return (
         <div className="content">
             {showModal && <BookModal onClose={handleCloseModal} selectedBook={selectedBook} />}
-            <div className="intro-banner">
+            {/* <div className="intro-banner">
                 <h1>Welcome to ArcBoox</h1>
-            </div>
+            </div> */}
             <div className="library-area">
                 <div className="book-store">
                     <div className="books-block">

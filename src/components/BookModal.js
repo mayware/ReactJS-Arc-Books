@@ -1,4 +1,16 @@
+import useFetch from "../useFetch";
+import { useState, useEffect } from "react";
+
 const BookModal = ({ onClose, selectedBook }) => {
+    const { data: desc } = useFetch(`https://openlibrary.org/works/${selectedBook.key.split("/")[2]}.json`);
+
+    useEffect(() => {
+        if (desc) {
+            console.log(desc.description);
+        }
+    }, [desc]);
+
+
     return (
         <div className="modal">
             <div className="modal-content">
@@ -8,14 +20,16 @@ const BookModal = ({ onClose, selectedBook }) => {
                     </button>
                 </div>
                 <div className="modal-body">
-                    <div className="modal-book-poster">
-                        <img src={selectedBook.image} alt="book-poster" className="book-poster-img" />
+                    <div className="modal-book-cover">
+                        <img src={`https://covers.openlibrary.org/b/id/${selectedBook.cover_id}-M.jpg`}
+                            alt="book-cover"
+                            className="modal-book-cover-img" />
                     </div>
                     <div className="modal-book-info">
                         <span className="modal-book-title">{selectedBook.title}</span>
                         <span className="modal-book-author">{selectedBook.author}</span>
                         <span className="modal-book-year">{selectedBook.year}</span>
-                        <span className="modal-book-overview">{selectedBook.overview}</span>
+                        {/* <span className="modal-book-overview">{desc.description}</span> */}
                     </div>
                 </div>
                 <div className="modal-footer">
