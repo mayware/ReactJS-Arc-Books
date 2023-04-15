@@ -208,7 +208,7 @@ body {
   box-shadow: 0px 0px 10px #000;
 }
 
-.book-block-header {
+.books-block-header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,6 +227,7 @@ body {
   flex-direction: column;
   padding: .5rem;
   margin: .5rem;
+  width: 200px;
   background: #101010;
   border: none;
   border-radius: 5px;
@@ -240,11 +241,10 @@ body {
 }
 
 .book-cover {
-  min-height: 200px;
+  min-height: 250px;
+  max-height: 250px;
   height: 250px;
-  max-height: 200px;
-  width: 200px;
-  margin-bottom: .5rem;
+  width: 100%;
 }
 
 .book-cover-img {
@@ -260,7 +260,7 @@ body {
   justify-content: center;
   flex-direction: column;
   max-height: 200px;
-  width: 200px;
+  width: 100%;
   min-height: 80px;
   border: 1px solid #343a40;
   border-radius: 5px;
@@ -268,7 +268,7 @@ body {
   padding: .5rem;
 }
 
-.book-tile {
+.book-title {
   color: #fca311;
   font-size: 16px;
   font-weight: 700;
@@ -378,6 +378,7 @@ body {
   grid-template-columns: repeat(8, 1fr);
   gap: 5px;
   padding: .5rem;
+  max-height: 350px;
   background: #101010;
 }
 
@@ -401,12 +402,14 @@ body {
   flex-direction: column;
   background: #151515;
   border-radius: 5px;
-  padding: .5rem;
+  padding: 1rem;
   text-align: justify;
+  height: 300px;
+  overflow-y: scroll;
 }
 
 .modal-book-title {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 800;
   color: #379237;
 }
@@ -414,6 +417,15 @@ body {
 .modal-book-author {
   font-size: 16px;
   font-weight: 800;
+  margin-bottom: .5rem;
+}
+
+.author-seperator {
+  color: #adb5bd;
+  margin-right: .5rem;
+}
+
+.author-text {
   color: #42378F;
 }
 
@@ -422,6 +434,10 @@ body {
   font-size: 14px;
   font-weight: 700;
   color: #F53844;
+}
+
+.modal-book-desc {
+  color: #adb5bd;
 }
 
 .modal-footer {

@@ -3,7 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 
-const BooksList = ({ subjectBooks, modalBtn }) => {
+const BooksList = ({ books, modalBtn }) => {
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -39,24 +39,19 @@ const BooksList = ({ subjectBooks, modalBtn }) => {
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
             >
-                {subjectBooks.map((book) => (
+                {books.items.map((book) => (
                     <button
                         className="book-btn"
                         onClick={() => modalBtn(book)}
-                        title={book.title}
-                        key={book.key}
+                        title={book.volumeInfo.title + '\n' + book.volumeInfo.authors}
+                        key={book.id}
                     >
                         <div className="book-cover">
                             <img
-                                src={`https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`}
+                                src={book.volumeInfo.imageLinks.thumbnail}
                                 alt="book-cover"
                                 className="book-cover-img"
                             />
-                        </div>
-                        <div className="book-info">
-                            <div className="book-tile">{book.title}</div>
-                            <div className="book-author">{book.authors[0].name}</div>
-                            <div className="book-author">{book.key}</div>
                         </div>
                     </button>
                 ))}

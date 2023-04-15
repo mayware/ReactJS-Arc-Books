@@ -35,14 +35,18 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbar-right">
+                <input type="text" className="search-field" placeholder="Search by title" />
+                <button className="search-btn">
+                    <span className="material-symbols-outlined">search</span>
+                </button>
                 <NavLink
                     to="/log"
                     exact
                     className="nav-link"
                     activeClassName="active"
                 >
-                    <span className="material-symbols-outlined navbar-link-icon">logout</span>
-                    <span className="navbar-link-span">Log out</span>
+                    <span className="material-symbols-outlined navbar-link-icon">share</span>
+                    <span className="navbar-link-span">Share</span>
                 </NavLink>
             </div>
         </header>
