@@ -26,11 +26,10 @@ const BookModal = ({ onClose, selectedBook }) => {
                         </span>
                         <span className="modal-book-year">{selectedBook.volumeInfo.publishedDate}</span>
                         <span className="modal-book-desc">{selectedBook.volumeInfo.description}</span>
-                        {/* <span className="modal-book-overview">{desc.description}</span> */}
                     </div>
                 </div>
                 <div className="modal-footer">
-                    <button className="add-to-cart-btn">Add to cart</button>
+                    <button className="add-to-cart-btn">Add to bookshelf</button>
                 </div>
             </div>
         </div>

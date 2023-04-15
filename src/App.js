@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Home from './components/Home';
 import Reader from './components/Reader';
 import Cart from './components/Cart';
+import BooksArea from './components/BooksArea';
 function App() {
   return (
     <Router>
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/books">
+              <BooksArea />
             </Route>
           </Switch>
         </div>
