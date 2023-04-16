@@ -1,3 +1,11 @@
+.intro-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    background-image: linear-gradient(135deg, #F53844 10%, #42378F 100%);
+}
+
 .genre-section {
     display: flex;
     align-items: center;
@@ -74,7 +82,7 @@
     grid-column: 1/3;
 }
 
-#nonFictionBlock {
+#bibliographynBlock {
     grid-column: 5/7;
 }
 
@@ -86,7 +94,7 @@
     grid-column: 2/6;
 }
 
-#westernBlock {
+#storyBlock {
     grid-column: 1/5;
 }
 
@@ -94,6 +102,6 @@
     grid-column: 5/7;
 }
 
-#comicsBlock {
+#proseBlock {
     grid-column: 2/7;
 }
