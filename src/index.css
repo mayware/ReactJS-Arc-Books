@@ -41,9 +41,15 @@ body {
 
 .brand-name-link {
   text-decoration: none;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
+  color: #ced4da;
+  transition: 200ms ease-in-out;
+}
+
+.brand-name-link:hover {
   color: #adb5bd;
+  transition: 200ms ease-in-out;
 }
 
 .header-left-links {
@@ -131,8 +137,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
-  padding: 0 .5rem 0 .5rem;
+  height: 55px;
+  padding: .5rem;
   width: 100%;
   margin-bottom: .5rem;
   border-top-left-radius: 5px;
@@ -159,18 +165,32 @@ body {
   align-items: center;
   justify-content: center;
   color: #adb5bd;
-  background: #000814;
-  border: 1px solid #343a40;
+  background: #00235B;
+  border: 1px solid transparent;
   border-radius: 5px;
   padding: 0 .5rem 0 .5rem;
-  height: 45px;
+  height: 35px;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
+  transition: 200ms ease-in-out;
 }
 
 .filter-btn-text {
   margin-left: .5rem;
+}
+
+.filter-btn:hover {
+  border-color: #adb5bd;
+  transition: 200ms ease-in-out;
+}
+
+.filter-btn.active {
+  border-color: #adb5bd;
+}
+
+#allFilterBtn {
+  margin-right: .5rem;
 }
 
 .search-box {
@@ -183,32 +203,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 45px;
+  height: 35px;
   min-width: 25px;
   width: 250px;
   font-size: 14px;
   padding: 0 1rem 0 1rem;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  border: 1px solid #343a40;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid #000;
   background-color: rgba(0, 0, 0, .5);
   color: #adb5bd;
+  transition: 200ms ease-in-out;
 }
 
 .search-field:focus {
   outline: none;
   border-color: #fca311;
+  transition: 200ms ease-in-out;
 }
 
 .search-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 45px;
-  width: 75px;
+  height: 35px;
+  width: 50px;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  border: 1px solid #343a40;
+  border: 1px solid #000;
   background: #136f63;
   color: #101010;
   cursor: pointer;
@@ -217,7 +239,7 @@ body {
 .books-track {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  justify-items: center;
 }
 
 .book-btn {
@@ -227,16 +249,15 @@ body {
   padding: .5rem;
   margin: .5rem;
   width: 200px;
-  background: #101010;
+  background: #003566;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: 200ms ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .book-btn:hover {
-  box-shadow: 0px 0px 5px #42378F;
-  transition: 200ms ease-in-out;
+  transform: scale(1.1);
 }
 
 .book-cover {
@@ -284,7 +305,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: .5rem;
   border-top: 1px solid #343a40;
   background: #151515;
 }
@@ -436,7 +456,7 @@ body {
 .modal-book-title {
   font-size: 16px;
   font-weight: 800;
-  color: #379237;
+  color: #57cc99;
   margin-bottom: .5rem;
 }
 
@@ -452,7 +472,7 @@ body {
 }
 
 .author-text {
-  color: #42378F;
+  color: #00bbf9;
 }
 
 .modal-book-year {
@@ -468,12 +488,18 @@ body {
 }
 
 .modal-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
   padding: .5rem;
-  color: white;
 }
 
 .add-to-cart-btn {
-  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: .5rem;
+  height: 35px;
   width: 100%;
   border: none;
   border-radius: 5px;
@@ -488,6 +514,62 @@ body {
 .add-to-cart-btn:hover {
   background: #00235B;
   transition: 200ms ease-in-out;
+}
+
+.read-book-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: .5rem;
+  height: 35px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background: #136f63;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ced4da;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 200ms ease-in-out;
+}
+
+.donwload-pdf-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background: #e63946;
+  font-size: 16px;
+  font-weight: 700;
+  color: #101010;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 200ms ease-in-out;
+}
+
+.donwload-epub-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 100%;
+  border: 1px solid #adb5bd;
+  border-radius: 5px;
+  background: #151515;
+  font-size: 16px;
+  font-weight: 500;
+  color: #adb5bd;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 200ms ease-in-out;
+}
+
+.download-btn-text {
+  margin-right: .5rem;
 }
 
 /* Modal */

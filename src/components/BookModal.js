@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 const BookModal = ({ onClose, selectedBook }) => {
 
-
     return (
         <div className="modal">
             <div className="modal-content">
@@ -30,6 +29,15 @@ const BookModal = ({ onClose, selectedBook }) => {
                 </div>
                 <div className="modal-footer">
                     <button className="add-to-cart-btn">Add to bookshelf</button>
+                    <a href={selectedBook.volumeInfo.previewLink} className="read-book-link">Read the book</a>
+                    {selectedBook.accessInfo.pdf.acsTokenLink && <a href={selectedBook.accessInfo.pdf.acsTokenLink} className="donwload-pdf-btn">
+                        <span className="download-btn-text">Download PDF</span>
+                        <span className="material-symbols-outlined">download</span>
+                    </a>}
+                    {selectedBook.accessInfo.epub.acsTokenLink && <a href={selectedBook.accessInfo.epub.acsTokenLink} className="donwload-epub-btn">
+                        <span className="download-btn-text">Download EPUB</span>
+                        <span className="material-symbols-outlined">download</span>
+                    </a>}
                 </div>
             </div>
         </div>

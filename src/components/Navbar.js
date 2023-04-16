@@ -21,17 +21,6 @@ const Navbar = () => {
                         </span>
                         <span className="navbar-link-span">Bookshelf</span>
                     </NavLink>
-                    <NavLink
-                        to="/booksrea"
-                        exact
-                        className="nav-link"
-                        activeClassName="active"
-                    >
-                        <span className="material-symbols-outlined navbar-link-icon">
-                            shelves
-                        </span>
-                        <span className="navbar-link-span">area</span>
-                    </NavLink>
                 </div>
             </div>
             <div className="navbar-right">

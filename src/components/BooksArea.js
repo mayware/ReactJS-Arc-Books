@@ -9,11 +9,16 @@ const BooksArea = () => {
     const [showModal, setShowModal] = useState(false);
     const [selectedBook, setSelectedBook] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
-    const [bookFilter, setBookFilter] = useState('partial')
+    const [bookFilter, setBookFilter] = useState('partial');
+    const [searchTerm, setSearchTerm] = useState('');
     const location = useLocation();
     const genre = location.state.genre;
+    const [searchUrl, setSearchUrl] = useState(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 10}&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
+    const { data: books, isPending, error } = useFetch(searchUrl);
 
-    const { data: books, isPending, error } = useFetch(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 10}&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
+    useEffect(() => {
+        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 10}&maxResults=10`);
+    }, [genre, bookFilter, currentPage]);
 
     function modalBtn(book) {
         setSelectedBook(book);
@@ -31,8 +36,15 @@ const BooksArea = () => {
     function handleNextPage() {
         setCurrentPage((prevPage) => prevPage + 1);
     }
-    function filterBooks() {
-        setBookFilter('full')
+    function filterReadableBooks() {
+        setBookFilter('full');
+    }
+    function filterAllBooks() {
+        setBookFilter('partial');
+    }
+
+    function getSearchTerm() {
+        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm.toLowerCase()}&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
     }
 
     return (
@@ -44,14 +56,18 @@ const BooksArea = () => {
                         <div className="books-block-header">
                             <div className="book-block-header-left">
                                 <span className="genres-header-title">{genre.toUpperCase()}</span>
-                                <button className="filter-btn" onClick={filterBooks}>
-                                    <span class="material-symbols-outlined">menu_book</span>
-                                    <span className="filter-btn-text">Readable books</span>
+                                <button className={`filter-btn ${bookFilter === 'partial' ? 'active' : ''}`} id="allFilterBtn" onClick={filterAllBooks}>
+                                    <span className="material-symbols-outlined">library_books</span>
+                                    <span className="filter-btn-text">Partial books</span>
+                                </button>
+                                <button className={`filter-btn ${bookFilter === 'full' ? 'active' : ''}`} onClick={filterReadableBooks}>
+                                    <span className="material-symbols-outlined">auto_stories</span>
+                                    <span className="filter-btn-text">Fully readable books</span>
                                 </button>
                             </div>
                             <div className="search-box">
-                                <input type="text" className="search-field" placeholder="Search by title" />
-                                <button className="search-btn">
+                                <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="search-field" />
+                                <button className="search-btn" onClick={getSearchTerm}>
                                     <span className="material-symbols-outlined">search</span>
                                 </button>
                             </div>
