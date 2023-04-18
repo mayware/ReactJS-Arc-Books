@@ -13,9 +13,9 @@ const BookModal = ({ onClose, selectedBook }) => {
                 </div>
                 <div className="modal-body">
                     <div className="modal-book-cover">
-                        <img src={selectedBook.volumeInfo.imageLinks.thumbnail}
+                        {selectedBook.volumeInfo.imageLinks && <img src={selectedBook.volumeInfo.imageLinks.thumbnail}
                             alt="book-cover"
-                            className="modal-book-cover-img" />
+                            className="modal-book-cover-img" />}
                     </div>
                     <div className="modal-book-info">
                         <span className="modal-book-title">{selectedBook.volumeInfo.title}</span>
@@ -29,7 +29,7 @@ const BookModal = ({ onClose, selectedBook }) => {
                 </div>
                 <div className="modal-footer">
                     <button className="add-to-cart-btn">Add to bookshelf</button>
-                    <a href={selectedBook.volumeInfo.previewLink} className="read-book-link">Read the book</a>
+                    <a href={selectedBook.volumeInfo.previewLink} className="read-book-link" target="_blank">Read the book</a>
                     {selectedBook.accessInfo.pdf.acsTokenLink && <a href={selectedBook.accessInfo.pdf.acsTokenLink} className="donwload-pdf-btn">
                         <span className="download-btn-text">Download PDF</span>
                         <span className="material-symbols-outlined">download</span>

@@ -50,11 +50,11 @@ const BooksList = ({ books, modalBtn }) => {
                         key={book.id}
                     >
                         <div className="book-cover">
-                            <img
+                            {book.volumeInfo.imageLinks && <img
                                 src={book.volumeInfo.imageLinks.thumbnail}
                                 alt="book-cover"
                                 className="book-cover-img"
-                            />
+                            />}
                         </div>
                     </button>
                 ))}
