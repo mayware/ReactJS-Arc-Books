@@ -1,11 +1,12 @@
-
-
 import { Link } from 'react-router-dom'
 import '../styles/genres.css'
+import { useEffect } from 'react';
 
 
 const Home = () => {
-
+    useEffect(() => {
+        localStorage.clear();
+    }, []);
     return (
         <div className="content">
             <div className="intro-banner">

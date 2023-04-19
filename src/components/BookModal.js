@@ -19,17 +19,26 @@ const BookModal = ({ onClose, selectedBook }) => {
                     </div>
                     <div className="modal-book-info">
                         <span className="modal-book-title">{selectedBook.volumeInfo.title}</span>
-                        <span className="modal-book-author">
-                            <span className="author-seperator">by</span>
-                            <span className="author-text">{selectedBook.volumeInfo.authors}</span>
-                        </span>
-                        <span className="modal-book-year">{selectedBook.volumeInfo.publishedDate}</span>
+                        <div className="modal-book-author">
+                            <span className="modal-info-seperator">Author:</span>
+                            <span className="modal-info-text">{selectedBook.volumeInfo.authors}</span>
+                        </div>
+                        <div className="modal-book-year">
+                            <span className="modal-info-seperator">Year:</span>
+                            <span className="modal-info-text">{selectedBook.volumeInfo.publishedDate}</span>
+                        </div>
+                        <div className="modal-book-category">
+                            <span className="modal-info-seperator">Category:</span>
+                            <span className="modal-info-text">{selectedBook.volumeInfo.categories}</span>
+                        </div>
                         <span className="modal-book-desc">{selectedBook.volumeInfo.description}</span>
                     </div>
                 </div>
                 <div className="modal-footer">
-                    <button className="add-to-cart-btn">Add to bookshelf</button>
-                    <a href={selectedBook.volumeInfo.previewLink} className="read-book-link" target="_blank">Read the book</a>
+                    <a href={selectedBook.volumeInfo.previewLink} className="read-book-link" target="_blank">
+                        <span className="material-symbols-outlined">local_library</span>
+                        <span className="read-link-text">Read the paper</span>
+                    </a>
                     {selectedBook.accessInfo.pdf.acsTokenLink && <a href={selectedBook.accessInfo.pdf.acsTokenLink} className="donwload-pdf-btn">
                         <span className="download-btn-text">Download PDF</span>
                         <span className="material-symbols-outlined">download</span>
