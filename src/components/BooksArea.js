@@ -1,9 +1,10 @@
 import useFetch from "../useFetch";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import BooksList from "./BooksList";
 import BookModal from "./BookModal";
 import { useLocation } from 'react-router-dom';
 import Select from 'react-select'
+import { BooksContext } from "./BooksContext";
 // AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c
 
 const BooksArea = () => {
@@ -17,6 +18,7 @@ const BooksArea = () => {
     const [searchUrl, setSearchUrl] = useState(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 10}&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
     const { data: books, isPending, error } = useFetch(searchUrl);
     const [genreTitle, setGenreTitle] = useState(genre);
+    const msg = useContext(BooksContext);
 
     useEffect(() => {
         const storedGenre = localStorage.getItem('selectedGenre');
@@ -128,7 +130,7 @@ const BooksArea = () => {
                                 }} />
                                 <button className={`filter-btn ${bookFilter === 'partial' ? 'active' : ''}`} id="allFilterBtn" onClick={filterAllBooks}>
                                     <span className="material-symbols-outlined">library_books</span>
-                                    <span className="filter-btn-text">Partial review</span>
+                                    <span className="filter-btn-text">{msg}</span>
                                 </button>
                                 <button className={`filter-btn ${bookFilter === 'full' ? 'active' : ''}`} onClick={filterReadableBooks}>
                                     <span className="material-symbols-outlined">auto_stories</span>

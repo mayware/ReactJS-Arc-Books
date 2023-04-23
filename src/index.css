@@ -41,7 +41,7 @@ body {
 
 .brand-name-link {
   text-decoration: none;
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 700;
   color: #ced4da;
   transition: 200ms ease-in-out;
@@ -198,6 +198,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 200ms ease-in-out;
 }
 
 .search-field {
@@ -243,7 +244,7 @@ body {
   cursor: pointer;
 }
 
-.search-btn:hover {
+.search-box:hover>.search-btn {
   color: #00bbf9;
   transition: 200ms ease-in-out;
 }
