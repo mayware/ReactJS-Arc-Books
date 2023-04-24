@@ -279,6 +279,121 @@ body {
   transform: scale(1.1);
 }
 
+.content-bookshelf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 4rem;
+}
+
+.bookshelf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bookshelf-header {
+  padding: 1rem;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  background: #101010;
+}
+
+.bookshelf-header-title {
+  color: #fca311;
+}
+
+.book-shelves {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  background-color: rgba(0, 0, 0, .9);
+  padding: 1rem;
+}
+
+.bookshelf-info {
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  background: #101010;
+  border-radius: 5px;
+  color: #00bbf9;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.cart-item {
+  background: #101010;
+  padding: .5rem;
+}
+
+.cart-book {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 200px;
+  max-height: 300px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 1px 5px 5px #379237;
+}
+
+.cart-book-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 235px;
+  width: 100%;
+}
+
+.cart-book-cover-img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.cart-book-title {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, .7);
+  border-top: 1px solid #000;
+  color: #ced4da;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cart-read-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 100%;
+  border: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #003566;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ced4da;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.cart-read-btn:hover {
+  background: #001d3d;
+  color: #ffd60a;
+  transition: 200ms ease-in-out;
+}
+
 .book-cover {
   display: flex;
   align-items: center;
@@ -287,7 +402,6 @@ body {
   max-height: 250px;
   height: 250px;
   width: 100%;
-
 }
 
 .cover-unavailable-info {
@@ -601,3 +715,15 @@ body {
 }
 
 /* Modal */
+
+/* Bookshelf */
+
+.cart-book-item {
+  color: #adb5bd;
+  font-size: 16px;
+  font-weight: 500;
+  background: #0F3460;
+  padding: 1rem;
+}
+
+/* Bookshelf */

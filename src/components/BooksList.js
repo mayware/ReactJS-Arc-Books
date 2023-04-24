@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import 'react-multi-carousel/lib/styles.css';
+
+import CartContext from "../context/CartContext";
 // import Carousel from 'react-multi-carousel';
 
 
-const BooksList = ({ books, modalBtn, addToBookshelf }) => {
+const BooksList = ({ books, modalBtn }) => {
+
+    const { addToCart } = useContext(CartContext)
+    const handleClick = (book) => {
+        addToCart(book);
+    };
 
     return (
         <div>
@@ -27,7 +34,7 @@ const BooksList = ({ books, modalBtn, addToBookshelf }) => {
                                 )}
                             </div>
                         </button>
-                        <button className="add-to-cart-btn" onClick={() => addToBookshelf(book)}>Add to bookshelf</button>
+                        <button className="add-to-cart-btn" onClick={() => handleClick(book)}>Add to bookshelf</button>
                     </div>
                 ))}
             </div>
