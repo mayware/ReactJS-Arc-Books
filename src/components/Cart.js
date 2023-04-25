@@ -3,6 +3,11 @@ import CartContext from "../context/CartContext";
 const Cart = () => {
 
     const { cartItems, addToCart } = useContext(CartContext);
+    const { removeItem } = useContext(CartContext);
+
+    const handleDelete = (item) => {
+        removeItem(item);
+    }
 
     return (
         <div className="content-bookshelf">
@@ -15,6 +20,9 @@ const Cart = () => {
                         {cartItems.map((item) => (
                             <div className="cart-item" key={item.id}>
                                 <div className="cart-book">
+                                    <button className="remove-item-btn" onClick={() => handleDelete(item)}>
+                                        <span className="material-symbols-outlined">delete</span>
+                                    </button>
                                     <div className="cart-book-cover">
                                         <img src={item.volumeInfo.imageLinks.thumbnail}
                                             alt="book-cover"

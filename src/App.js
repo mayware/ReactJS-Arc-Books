@@ -27,9 +27,16 @@ function App() {
     });
   };
 
+  const removeItem = (book) => {
+    const booksLeft = cartItems.filter((item) => item.id !== book.id);
+    setCartItems(booksLeft);
+    localStorage.setItem('cartItems', JSON.stringify(booksLeft));
+  };
+
+
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeItem }}>
       <Router>
         <div className="App">
           <Navbar />

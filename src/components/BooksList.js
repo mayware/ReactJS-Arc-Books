@@ -7,7 +7,8 @@ import CartContext from "../context/CartContext";
 
 const BooksList = ({ books, modalBtn }) => {
 
-    const { addToCart } = useContext(CartContext)
+    const { addToCart } = useContext(CartContext);
+
 
     const handleClick = (book) => {
         addToCart(book);
