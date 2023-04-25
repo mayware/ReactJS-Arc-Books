@@ -2,11 +2,15 @@ import React, { useContext } from "react";
 import CartContext from "../context/CartContext";
 const Cart = () => {
 
-    const { cartItems, addToCart } = useContext(CartContext);
+    const { cartItems } = useContext(CartContext);
     const { removeItem } = useContext(CartContext);
+    const { clearBookshelf } = useContext(CartContext);
 
     const handleDelete = (item) => {
         removeItem(item);
+    }
+    const handleClear = () => {
+        clearBookshelf();
     }
 
     return (
@@ -14,7 +18,10 @@ const Cart = () => {
             {cartItems.length > 0 ?
                 <div className="bookshelf">
                     <div className="bookshelf-header">
-                        <h1 className="bookshelf-header-title">Your bookshelf</h1>
+                        <h2 className="bookshelf-header-title">Your bookshelf</h2>
+                        <button className="clear-shelf-btn" onClick={() => handleClear()}>
+                            <span className="material-symbols-outlined btn-icon">clear_all</span>
+                            Clear bookshelf</button>
                     </div>
                     <div className="book-shelves">
                         {cartItems.map((item) => (

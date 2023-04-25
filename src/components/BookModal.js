@@ -36,7 +36,7 @@ const BookModal = ({ onClose, selectedBook }) => {
                 </div>
                 <div className="modal-footer">
                     <a href={selectedBook.volumeInfo.previewLink} className="read-book-link" target="_blank">
-                        <span className="material-symbols-outlined">local_library</span>
+                        <span className="material-symbols-outlined btn-icon">local_library</span>
                         <span className="read-link-text">Read the paper</span>
                     </a>
                     {selectedBook.accessInfo.pdf.acsTokenLink && <a href={selectedBook.accessInfo.pdf.acsTokenLink} className="donwload-pdf-btn">

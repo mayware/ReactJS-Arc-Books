@@ -8,9 +8,8 @@ import BooksArea from './components/BooksArea';
 import CartContext from './context/CartContext';
 import React, { useEffect, useState } from 'react';
 function App() {
-  // Setting up an empty array
-  const [cartItems, setCartItems] = useState([]);
 
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
@@ -33,10 +32,14 @@ function App() {
     localStorage.setItem('cartItems', JSON.stringify(booksLeft));
   };
 
+  const clearBookshelf = () => {
+    setCartItems([]);
+    localStorage.removeItem('cartItems');
+  }
 
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeItem }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeItem, clearBookshelf }}>
       <Router>
         <div className="App">
           <Navbar />

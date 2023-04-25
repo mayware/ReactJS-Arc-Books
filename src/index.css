@@ -21,9 +21,9 @@ body {
   top: 0;
   width: 100%;
   padding: 0 1.5rem;
-  height: 55px;
+  height: 65px;
   box-shadow: 0 2px 10px 0 rgb(0, 0, 0, .4);
-  background: #0F3460;
+  background: #151515;
   /* backdrop-filter: blur(15px) brightness(75%) saturate(70%); */
   border-bottom: 1px solid #202020;
   z-index: 1000;
@@ -616,9 +616,13 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  box-shadow: 0px 0px 55px #000;
 }
 
 .bookshelf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 1rem;
   width: 100%;
   border-top-left-radius: 5px;
@@ -628,7 +632,7 @@ body {
 }
 
 .bookshelf-header-title {
-  color: #fca311;
+  color: #42378F;
 }
 
 .book-shelves {
@@ -636,7 +640,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   background-color: rgba(0, 0, 0, .9);
-  padding: 1rem;
+  padding: 2.5rem;
 }
 
 .bookshelf-info {
@@ -653,7 +657,6 @@ body {
 .cart-item {
   background: #101010;
   padding: .5rem;
-  box-shadow: 1px 5px 5px #379237;
 }
 
 .cart-book {
@@ -684,7 +687,7 @@ body {
 
 .cart-book-title {
   position: absolute;
-  bottom: 33px;
+  bottom: 35px;
   left: 0;
   width: 100%;
   padding: 1rem;
@@ -734,6 +737,36 @@ body {
   cursor: pointer;
   background-color: rgba(0, 0, 0, .8);
   color: #F53844;
+  transition: 200ms ease-in-out;
+}
+
+.remove-item-btn:hover {
+  color: #379237;
+  transition: 200ms ease-in-out;
+}
+
+.clear-shelf-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #F53844;
+  color: #ced4da;
+  transition: 200ms ease-in-out;
+}
+
+.clear-shelf-btn:hover {
+  background: #379237;
+  transition: 200ms ease-in-out;
+}
+
+.btn-icon {
+  margin-right: .5rem;
 }
 
 /* Bookshelf */
