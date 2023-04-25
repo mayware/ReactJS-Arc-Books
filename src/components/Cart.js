@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import CartContext from "../context/CartContext";
 const Cart = () => {
 
@@ -15,13 +16,20 @@ const Cart = () => {
 
     return (
         <div className="content-bookshelf">
+            <div className="back-btn">
+                <Link to="/books" className="back-to-bookstore-btn">
+                    <span class="material-symbols-outlined icon-btn">arrow_back_ios</span>
+                    <span className="back-btn-text">Back</span>
+                </Link>
+            </div>
             {cartItems.length > 0 ?
                 <div className="bookshelf">
                     <div className="bookshelf-header">
                         <h2 className="bookshelf-header-title">Your bookshelf</h2>
                         <button className="clear-shelf-btn" onClick={() => handleClear()}>
                             <span className="material-symbols-outlined btn-icon">clear_all</span>
-                            Clear bookshelf</button>
+                            <span className="clear-btn-text">Clear bookshelf</span>
+                        </button>
                     </div>
                     <div className="book-shelves">
                         {cartItems.map((item) => (

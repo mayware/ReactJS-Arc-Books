@@ -608,7 +608,32 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 4rem;
+  margin: 2rem;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.back-to-bookstore-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem 1rem .5rem 1rem;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid #343a40;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #151515;
+  color: #ced4da;
+  box-shadow: 0px 0px 15px #0081a7;
+  transition: 200ms ease-in-out;
 }
 
 .bookshelf {
@@ -632,7 +657,7 @@ body {
 }
 
 .bookshelf-header-title {
-  color: #42378F;
+  color: #0081a7;
 }
 
 .book-shelves {
@@ -657,6 +682,8 @@ body {
 .cart-item {
   background: #101010;
   padding: .5rem;
+  border-radius: 5px;
+  border: 1px solid #202020;
 }
 
 .cart-book {
