@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 const Home = () => {
     useEffect(() => {
-        localStorage.clear();
+        localStorage.removeItem('selectedGenre');
     }, []);
     return (
         <div className="content">
