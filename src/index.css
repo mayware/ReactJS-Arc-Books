@@ -6,7 +6,9 @@
   box-sizing: border-box;
 }
 
+html,
 body {
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,11 +16,19 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
   padding: 3.4rem 0 .5rem 0;
   background-image: url('./assets/books-bg.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.content {
+  flex: 1;
 }
 
 .genres-header {

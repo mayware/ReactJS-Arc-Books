@@ -28,7 +28,7 @@ const Cart = () => {
                     <div className="bookshelf-header">
                         <h2 className="bookshelf-header-title">Your bookshelf</h2>
                         <button className="clear-shelf-btn" onClick={() => handleClear()}>
-                            <span className="material-symbols-outlined btn-icon">clear_all</span>
+                            <span className="material-symbols-outlined btn-icon">mop</span>
                             <span className="clear-btn-text">Clear bookshelf</span>
                         </button>
                     </div>
