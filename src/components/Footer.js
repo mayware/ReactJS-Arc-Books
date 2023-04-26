@@ -16,10 +16,10 @@ const Footer = () => {
                 </span>
             </div>
             <div className="footer-right">
-                <a href="https://www.facebook.com/" className="soc-link"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.facebook.com/" className="soc-link"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/" className="soc-link"><i class="fa-brands fa-pinterest"></i></a>
-                <a href="https://www.facebook.com/" className="soc-link"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/" target='_blank' className="soc-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.facebook.com/" target='_blank' className="soc-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/" target='_blank' className="soc-link"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://www.facebook.com/" target='_blank' className="soc-link"><i class="fa-brands fa-twitter"></i></a>
             </div>
         </div>
     );
