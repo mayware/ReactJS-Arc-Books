@@ -268,6 +268,7 @@ body {
 }
 
 .book-btn {
+  position: relative;
   width: 100%;
   cursor: pointer;
   background: #151515;
@@ -276,8 +277,23 @@ body {
   transition: transform 0.2s ease-in-out;
 }
 
-.book-btn:hover {
-  transform: scale(1.1);
+.book-overlay {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+  /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 16px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.book-btn:hover .book-overlay {
+  opacity: 1;
 }
 
 .book-cover {
@@ -620,6 +636,7 @@ body {
   bottom: 30px;
   font-size: 17px;
   background: #42378F;
+  border: 1px solid #654E92;
   color: #ced4da;
   padding: 1rem;
 }
@@ -842,12 +859,12 @@ body {
   border-top-right-radius: 5px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, .8);
-  color: #F53844;
+  color: #42378F;
   transition: 200ms ease-in-out;
 }
 
 .remove-item-btn:hover {
-  color: #379237;
+  color: #F53844;
   transition: 200ms ease-in-out;
 }
 

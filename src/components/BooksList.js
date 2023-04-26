@@ -35,6 +35,7 @@ const BooksList = ({ books, modalBtn, showSnackBar }) => {
                                     <div className="cover-unavailable-info">Book cover is unavailable</div>
                                 )}
                             </div>
+                            <div class="book-overlay">{book.volumeInfo.title}</div>
                         </button>
                         <button className="add-to-cart-btn" onClick={() => handleClick(book)}>Add to bookshelf</button>
                     </div>
