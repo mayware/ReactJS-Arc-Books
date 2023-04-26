@@ -265,6 +265,12 @@ body {
   width: 200px;
   border-radius: 5px;
   box-shadow: 0px 0px 15px #001d3d;
+  transition: 200ms ease-in-out;
+}
+
+.book-entity:hover {
+  box-shadow: 0px 0px 15px #654E92;
+  transition: 200ms ease-in-out;
 }
 
 .book-btn {
@@ -281,7 +287,6 @@ body {
   position: absolute;
   bottom: 0;
   background-color: rgba(0, 0, 0, .7);
-  /* Black see-through */
   color: #f1f1f1;
   width: 100%;
   transition: .5s ease;
@@ -760,8 +765,11 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  background-color: rgba(0, 0, 0, .9);
   padding: 2.5rem;
+  border: 1px solid #151515;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: rgba(0, 0, 0, .9);
 }
 
 .bookshelf-info {
@@ -776,10 +784,11 @@ body {
 }
 
 .cart-item {
+  position: relative;
   background: #101010;
-  padding: .5rem;
   border-radius: 5px;
   border: 1px solid #202020;
+  box-shadow: 5px 5px 15px #003566;
 }
 
 .cart-book {
@@ -844,27 +853,25 @@ body {
   transition: 200ms ease-in-out;
 }
 
-
 .remove-item-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
+  top: -15px;
+  right: -15px;
+  z-index: 1;
   padding: .5rem;
-  border: none;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border: 1px solid #343a40;
+  border-radius: 50px;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, .8);
-  color: #42378F;
+  background: #F53844;
+  color: #ced4da;
   transition: 200ms ease-in-out;
 }
 
 .remove-item-btn:hover {
-  color: #F53844;
+  color: #101010;
   transition: 200ms ease-in-out;
 }
 
@@ -878,13 +885,13 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: #F53844;
+  background: #003566;
   color: #ced4da;
   transition: 200ms ease-in-out;
 }
 
 .clear-shelf-btn:hover {
-  background: #379237;
+  background: #e63946;
   transition: 200ms ease-in-out;
 }
 

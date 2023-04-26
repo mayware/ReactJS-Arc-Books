@@ -34,10 +34,10 @@ const Cart = () => {
                     <div className="book-shelves">
                         {cartItems.map((item) => (
                             <div className="cart-item" key={item.id}>
+                                <button className="remove-item-btn" onClick={() => handleDelete(item)}>
+                                    <span className="material-symbols-outlined">delete</span>
+                                </button>
                                 <div className="cart-book">
-                                    <button className="remove-item-btn" onClick={() => handleDelete(item)}>
-                                        <span className="material-symbols-outlined">delete</span>
-                                    </button>
                                     <div className="cart-book-cover">
                                         <img src={item.volumeInfo.imageLinks.thumbnail}
                                             alt="book-cover"
@@ -50,7 +50,7 @@ const Cart = () => {
                         ))}
                     </div>
                 </div> :
-                <div className={"bookshelf-info"}>No books in on your shelf</div>
+                <div className={"bookshelf-info"}>No books on your shelf yet</div>
             }
         </div>
     );

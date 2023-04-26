@@ -141,7 +141,6 @@ const BooksArea = () => {
                                     <span className="material-symbols-outlined">auto_stories</span>
                                     <span className="filter-btn-text">Full review</span>
                                 </button>
-                                {/* <button onClick={showSnackBar}>Show Snackbar</button> */}
                             </div>
                             <div className="search-box">
                                 <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="search-field" placeholder="Search.." />
