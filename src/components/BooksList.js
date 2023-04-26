@@ -1,17 +1,17 @@
 import React, { useContext } from 'react';
 import 'react-multi-carousel/lib/styles.css';
-
 import CartContext from "../context/CartContext";
 // import Carousel from 'react-multi-carousel';
 
 
-const BooksList = ({ books, modalBtn }) => {
+const BooksList = ({ books, modalBtn, showSnackBar }) => {
 
     const { addToCart } = useContext(CartContext);
 
 
     const handleClick = (book) => {
         addToCart(book);
+        showSnackBar();
     };
 
     return (

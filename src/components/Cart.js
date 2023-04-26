@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CartContext from "../context/CartContext";
 const Cart = () => {
 
@@ -17,10 +17,10 @@ const Cart = () => {
     return (
         <div className="content-bookshelf">
             <div className="back-btn">
-                <Link to="/books" className="back-to-bookstore-btn">
-                    <span class="material-symbols-outlined icon-btn">arrow_back_ios</span>
-                    <span className="back-btn-text">Back</span>
-                </Link>
+                <NavLink to="/" exact className="back-to-bookstore-btn">
+                    <span className="material-symbols-outlined btn-icon">home</span>
+                    <span className="back-btn-text">Homepage</span>
+                </NavLink>
             </div>
             {cartItems.length > 0 ?
                 <div className="bookshelf">
@@ -50,7 +50,7 @@ const Cart = () => {
                         ))}
                     </div>
                 </div> :
-                <div className="bookshelf-info">No books in on your shelf</div>
+                <div className={"bookshelf-info"}>No books in on your shelf</div>
             }
         </div>
     );

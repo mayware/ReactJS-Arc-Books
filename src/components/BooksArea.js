@@ -16,6 +16,7 @@ const BooksArea = () => {
     const [searchUrl, setSearchUrl] = useState(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 10}&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
     const { data: books, isPending, error } = useFetch(searchUrl);
     const [genreTitle, setGenreTitle] = useState(genre);
+    const [showSnack, setShowSnack] = useState('');
 
     useEffect(() => {
         const storedGenre = localStorage.getItem('selectedGenre');
@@ -64,6 +65,13 @@ const BooksArea = () => {
         localStorage.setItem('selectedGenre', option);
         setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=subject:${option}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 10}&maxResults=10`);
         setGenreTitle(option);
+    }
+
+    function showSnackBar() {
+        setShowSnack('show');
+        setTimeout(() => {
+            setShowSnack('');
+        }, 3000)
     }
 
     const selectStyles = {
@@ -133,6 +141,7 @@ const BooksArea = () => {
                                     <span className="material-symbols-outlined">auto_stories</span>
                                     <span className="filter-btn-text">Full review</span>
                                 </button>
+                                {/* <button onClick={showSnackBar}>Show Snackbar</button> */}
                             </div>
                             <div className="search-box">
                                 <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="search-field" placeholder="Search.." />
@@ -142,7 +151,7 @@ const BooksArea = () => {
                             </div>
                         </div>
                         {isPending && <div>Loading</div>}
-                        {books && <BooksList books={books} modalBtn={modalBtn} />}
+                        {books && <BooksList books={books} modalBtn={modalBtn} showSnackBar={showSnackBar} />}
                         <div className="pagination">
                             <button
                                 className="prev-btn"
@@ -162,6 +171,7 @@ const BooksArea = () => {
                     </div>
                 </div>
             </div>
+            <div className={`snackbar ${showSnack}`}> Added to the bookshelf</div>
         </div>
     );
 }

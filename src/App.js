@@ -19,11 +19,14 @@ function App() {
   }, []);
 
   const addToCart = (book) => {
-    setCartItems(prevCartItems => {
-      const updatedCartItems = [...prevCartItems, book];
-      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-      return updatedCartItems;
-    });
+    const isInCart = cartItems.some(item => item.id === book.id);
+    if (!isInCart) {
+      setCartItems(prevCartItems => {
+        const updatedCartItems = [...prevCartItems, book];
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        return updatedCartItems;
+      });
+    }
   };
 
   const removeItem = (book) => {
