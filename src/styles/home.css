@@ -15,9 +15,10 @@
 
 .books-genres {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 10px;
     padding: .5rem;
+    width: 950px;
     border-radius: 5px;
     border: 1px solid #343a40;
     background: #101010;
@@ -33,10 +34,10 @@
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
-    color: #adb5bd;
-    border: 1px solid #000;
+    color: #cecece;
+    border: 1px solid #343a40;
     border-radius: 5px;
-    background-image: linear-gradient(135deg, #1e3c72 10%, #2a5298 100%);
+    /* background: #a98467; */
     transition: transform 0.2s ease-in-out;
 }
 
@@ -44,32 +45,60 @@
     transform: scale(1.1);
 }
 
-#fictionBlock {
-    grid-column: 1/3;
+#compBlock {
+    grid-column: 1/5;
 }
 
-#bibliographynBlock {
+#fictionBlock {
     grid-column: 5/7;
+}
+
+#gamesBlock {
+    grid-column: 7/9;
 }
 
 #psyBlock {
-    grid-column: 1/5;
-}
-
-#horrorBlock {
     grid-column: 2/6;
 }
 
-#storyBlock {
-    grid-column: 1/5;
+#musicBlock {
+    grid-column: 6/9;
+}
+
+#essayBlock {
+    grid-column: 1/3;
+}
+
+#fantasyBlock {
+    grid-column: 3/5;
+}
+
+#medicalBlock {
+    grid-column: 5/9;
+}
+
+#dramaBlock {
+    grid-column: 1/4;
+}
+
+#businessBlock {
+    grid-column: 4/9;
+}
+
+#astronomyBlock {
+    grid-column: 1/7;
 }
 
 #legendBlock {
-    grid-column: 5/7;
+    grid-column: 7/9;
 }
 
-#proseBlock {
-    grid-column: 2/7;
+#transportationBlock {
+    grid-column: 1/5;
+}
+
+#educationBlock {
+    grid-column: 5/9;
 }
 
 

@@ -107,19 +107,19 @@ const BooksArea = () => {
 
     const options = [
         { value: 'fiction', label: 'Fiction' },
-        { value: 'history', label: 'History' },
-        { value: 'novel', label: 'Novel' },
-        { value: 'bibliography', label: 'Bibliography' },
+        { value: 'computers', label: 'Computers' },
+        { value: 'games', label: 'Games' },
+        { value: 'music', label: 'Music' },
         { value: 'psychology', label: 'Psychology' },
-        { value: 'science-fiction', label: 'Science-fiction' },
+        { value: 'medical', label: 'Medical' },
         { value: 'essay', label: 'Essay' },
         { value: 'fantasy', label: 'Fantasy' },
-        { value: 'creative_nonfiction', label: 'Creative_nonfiction' },
+        { value: 'business & economics', label: 'Business & Economics' },
         { value: 'drama', label: 'Drama' },
-        { value: 'short_story', label: 'Short_story' },
+        { value: 'astronomy', label: 'Astronomy' },
         { value: 'legend', label: 'Legend' },
-        { value: 'poem', label: 'Poem' },
-        { value: 'prose', label: 'Prose' },
+        { value: 'transportation', label: 'Transportation' },
+        { value: 'education', label: 'Education' },
     ]
 
     return (
