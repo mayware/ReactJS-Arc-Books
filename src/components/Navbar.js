@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import CartContext from "../context/CartContext";
+import '../styles/navbar.css'
 
 const Navbar = () => {
     const { cartItems } = useContext(CartContext);

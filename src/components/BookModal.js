@@ -1,5 +1,4 @@
-import useFetch from "../useFetch";
-import { useState, useEffect } from "react";
+import '../styles/modal.css'
 
 const BookModal = ({ onClose, selectedBook }) => {
 

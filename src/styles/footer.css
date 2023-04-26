@@ -35,7 +35,12 @@
 
 .soc-link {
     text-decoration: none;
-    color: #adb5bd;
+    color: #cecece;
     font-size: 32px;
     margin-left: 1rem;
+}
+
+.soc-link:hover {
+    color: #adb5bd;
+    transition: 200ms ease-in-out;
 }

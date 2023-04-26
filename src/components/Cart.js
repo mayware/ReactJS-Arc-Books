@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import CartContext from "../context/CartContext";
+import '../styles/bookshelf.css'
 const Cart = () => {
 
     const { cartItems } = useContext(CartContext);
@@ -44,7 +45,7 @@ const Cart = () => {
                                             className="cart-book-cover-img" />
                                     </div>
                                     <span className="cart-book-title">{item.volumeInfo.title}</span>
-                                    <button className="cart-read-btn">Read this book</button>
+                                    <a href={item.volumeInfo.previewLink} className="cart-read-btn">Read this book</a>
                                 </div>
                             </div>
                         ))}
