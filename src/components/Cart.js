@@ -34,24 +34,24 @@ const Cart = () => {
                     </div>
                     <div className="book-shelves">
                         {cartItems.map((item) => (
-                            <div className="cart-item" key={item.id}>
+                            <div className="shelf-item" key={item.id}>
                                 <button className="remove-item-btn" onClick={() => handleDelete(item)}>
                                     <span className="material-symbols-outlined">delete</span>
                                 </button>
-                                <div className="cart-book">
-                                    <div className="cart-book-cover">
+                                <div className="shelf-book">
+                                    <div className="shelf-book-cover">
                                         <img src={item.volumeInfo.imageLinks.thumbnail}
                                             alt="book-cover"
-                                            className="cart-book-cover-img" />
+                                            className="shelf-book-cover-img" />
                                     </div>
-                                    <span className="cart-book-title">{item.volumeInfo.title}</span>
-                                    <a href={item.volumeInfo.previewLink} className="cart-read-btn">Read this book</a>
+                                    <span className="shelf-book-title">{item.volumeInfo.title}</span>
+                                    <a href={item.volumeInfo.previewLink} className="shelf-read-btn">Read this book</a>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div> :
-                <div className={"bookshelf-info"}>No books on your shelf yet</div>
+                <div className="bookshelf-info">No books on your shelf yet</div>
             }
         </div>
     );
