@@ -59,7 +59,7 @@ const BooksArea = () => {
 
     function getSearchTerm() {
         setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm.toLowerCase()}&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
-        console.log(searchUrl);
+        setSearchTerm('');
     }
 
     function switchGenre(option) {
