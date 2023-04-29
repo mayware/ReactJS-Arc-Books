@@ -6,10 +6,14 @@ import Reader from './components/Reader';
 import Cart from './components/Cart';
 import BooksArea from './components/BooksArea';
 import CartContext from './context/CartContext';
+import SearchArea from './components/SearchArea';
 import React, { useEffect, useState } from 'react';
 function App() {
 
   const [cartItems, setCartItems] = useState([]);
+
+  const [searchUrl, setSearchUrl] = useState(`https://www.googleapis.com/books/v1/volumes?q=life&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
@@ -59,6 +63,9 @@ function App() {
               </Route>
               <Route path="/books">
                 <BooksArea />
+              </Route>
+              <Route path="/search">
+                <SearchArea />
               </Route>
             </Switch>
           </div>

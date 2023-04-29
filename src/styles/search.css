@@ -1,0 +1,30 @@
+.search-results-area {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin: 1.5rem;
+}
+
+.search-store {
+    text-align: center;
+    width: 1200px;
+    margin: 1rem;
+    border: 1px solid #343a40;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #000;
+    background: #101010;
+}
+
+.search-store-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 55px;
+    padding: 0 2.5rem 0 2.5rem;
+    width: 100%;
+    margin-bottom: .5rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid #343a40;
+    background: #2f3e46;
+}

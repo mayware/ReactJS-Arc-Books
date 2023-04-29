@@ -6,6 +6,12 @@ import '../styles/navbar.css'
 const Navbar = () => {
     const { cartItems } = useContext(CartContext);
     const [counter, setCounter] = useState(null);
+    const [searchUrl, setSearchUrl] = useState(``);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    function searchBooks() {
+        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm.toLowerCase()}&maxResults=10&&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
+    }
 
     useEffect(() => {
         setCounter(cartItems.length);
@@ -37,6 +43,12 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbar-right">
+                <div className="search-box">
+                    <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="search-field" placeholder="Search.." />
+                    <button className="search-btn" onClick={searchBooks}>
+                        <span className="material-symbols-outlined">search</span>
+                    </button>
+                </div>
                 <NavLink
                     to="/log"
                     exact

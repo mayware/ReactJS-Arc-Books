@@ -1,5 +1,5 @@
 import useFetch from "../useFetch";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import BooksList from "./BooksList";
 import BookModal from "./BookModal";
 import { useLocation } from 'react-router-dom';
@@ -57,8 +57,8 @@ const BooksArea = () => {
         setBookFilter('partial');
     }
 
-    function getSearchTerm() {
-        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm.toLowerCase()}&maxResults=40&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
+    function searchBooks() {
+        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm.toLowerCase()}&startIndex=${(currentPage - 1) * 10}&maxResults=10&&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
         // setSearchTerm('');
     }
 
@@ -146,7 +146,7 @@ const BooksArea = () => {
                             </div>
                             <div className="search-box">
                                 <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="search-field" placeholder="Search.." />
-                                <button className="search-btn" onClick={getSearchTerm}>
+                                <button className="search-btn" onClick={searchBooks}>
                                     <span className="material-symbols-outlined">search</span>
                                 </button>
                             </div>
