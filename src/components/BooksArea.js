@@ -58,13 +58,14 @@ const BooksArea = () => {
     }
 
     function getSearchTerm() {
-        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm.toLowerCase()}&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
-        setSearchTerm('');
+        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm.toLowerCase()}&maxResults=40&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
+        // setSearchTerm('');
     }
 
     function switchGenre(option) {
         localStorage.setItem('selectedGenre', option);
-        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=subject:${option}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 10}&maxResults=10`);
+        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=subject:${option}&filter=${bookFilter}&startIndex=0&maxResults=10`);
+        setCurrentPage(1);
         setGenreTitle(option);
     }
 
