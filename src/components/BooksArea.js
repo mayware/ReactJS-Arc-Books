@@ -11,7 +11,6 @@ const BooksArea = () => {
     const [selectedBook, setSelectedBook] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [bookFilter, setBookFilter] = useState('partial');
-    const [searchTerm, setSearchTerm] = useState('');
     const location = useLocation();
     const genre = location.state.genre;
     const [searchUrl, setSearchUrl] = useState(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 10}&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
@@ -57,11 +56,6 @@ const BooksArea = () => {
         setBookFilter('partial');
     }
 
-    function searchBooks() {
-        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm.toLowerCase()}&startIndex=${(currentPage - 1) * 10}&maxResults=10&&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
-        // setSearchTerm('');
-    }
-
     function switchGenre(option) {
         localStorage.setItem('selectedGenre', option);
         setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=subject:${option}&filter=${bookFilter}&startIndex=0&maxResults=10`);
@@ -86,7 +80,7 @@ const BooksArea = () => {
             cursor: 'pointer',
         }),
         control: () => ({
-            width: 125,
+            width: 135,
             height: 30,
             marginRight: 7,
             border: '2px solid #343a40',
@@ -130,25 +124,28 @@ const BooksArea = () => {
                 <div className="book-store">
                     <div className="books-block">
                         <div className="books-block-header">
-                            <div className="book-block-header-left">
-                                <span className="genres-header-title">{genreTitle.toUpperCase()}</span>
-                                <Select options={options} styles={selectStyles} onChange={(selectedGenre) => {
-                                    switchGenre(selectedGenre.value);
-                                }} />
-                                <button className={`filter-btn ${bookFilter === 'partial' ? 'active' : ''}`} id="allFilterBtn" onClick={filterAllBooks}>
-                                    <span className="material-symbols-outlined">library_books</span>
-                                    <span className="filter-btn-text">Partial</span>
-                                </button>
-                                <button className={`filter-btn ${bookFilter === 'full' ? 'active' : ''}`} onClick={filterReadableBooks}>
-                                    <span className="material-symbols-outlined">auto_stories</span>
-                                    <span className="filter-btn-text">Full review</span>
-                                </button>
-                            </div>
-                            <div className="search-box">
-                                <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="search-field" placeholder="Search.." />
-                                <button className="search-btn" onClick={searchBooks}>
-                                    <span className="material-symbols-outlined">search</span>
-                                </button>
+                            <div className="book-block-header-control">
+                                <div className="genre-switch">
+                                    <div className="genres-header-title">
+                                        <span className="genres-header-title-text">Genre:</span>
+                                        <div className="genres-switch-title">
+                                            {genreTitle.toUpperCase()}
+                                        </div>
+                                    </div>
+                                    <Select options={options} styles={selectStyles} onChange={(selectedGenre) => {
+                                        switchGenre(selectedGenre.value);
+                                    }} />
+                                </div>
+                                <div className="review-filter-btns">
+                                    <button className={`filter-btn ${bookFilter === 'partial' ? 'active' : ''}`} id="allFilterBtn" onClick={filterAllBooks}>
+                                        <span className="material-symbols-outlined">library_books</span>
+                                        <span className="filter-btn-text">Partial</span>
+                                    </button>
+                                    <button className={`filter-btn ${bookFilter === 'full' ? 'active' : ''}`} onClick={filterReadableBooks}>
+                                        <span className="material-symbols-outlined">auto_stories</span>
+                                        <span className="filter-btn-text">Full review</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         {isPending && <div>Loading</div>}

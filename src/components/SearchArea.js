@@ -9,6 +9,7 @@ const SearchArea = () => {
 
     const { searchUrl } = useContext(CartContext);
     const { data: books, isPending, error } = useFetch(searchUrl);
+    const [selectedBook, setSelectedBook] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [showSnack, setShowSnack] = useState('');
 
@@ -21,16 +22,24 @@ const SearchArea = () => {
     }
 
     function modalBtn(book) {
-        // setSelectedBook(book);
+        setSelectedBook(book);
         setShowModal(true);
     }
+    function handleCloseModal() {
+        setShowModal(false);
+        setSelectedBook(null);
+    }
+    useEffect(() => {
+
+    }, []);
 
     return (
         <div className="content">
+            {showModal && <BookModal onClose={handleCloseModal} selectedBook={selectedBook} />}
             <div className="search-results-area">
                 <div className="search-store">
                     <div className="search-store-header">
-                        Search term
+                        Search results
                     </div>
                     {isPending && <div>Loading</div>}
                     {books && <BooksList books={books} modalBtn={modalBtn} showSnackBar={showSnackBar} />}

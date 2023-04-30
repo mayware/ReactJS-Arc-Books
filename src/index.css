@@ -81,17 +81,39 @@ body {
   background: #2f3e46;
 }
 
-.book-block-header-left {
+.book-block-header-control {
   display: flex;
   align-items: center;
-  padding: .3rem .3rem .3rem 1rem;
+  justify-content: space-between;
+  width: 100%;
+  padding: .3rem .7rem .3rem .7rem;
   border-radius: 5px;
   background: #101010;
 }
 
+.genre-switch {
+  display: flex;
+  align-items: center;
+}
+
 .genres-header-title {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.genres-header-title-text {
+  color: #ced4da;
+  margin-right: .5rem;
+}
+
+.genres-switch-title {
   color: #136f63;
-  margin-right: 1.5rem;
+}
+
+.review-filter-btns {
+  display: flex;
+  align-items: center;
 }
 
 .filter-btn {
@@ -99,7 +121,7 @@ body {
   align-items: center;
   justify-content: center;
   color: #101010;
-  background: #00798c;
+  background: #003566;
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 0 .5rem 0 .5rem;
@@ -120,7 +142,7 @@ body {
 }
 
 .filter-btn.active {
-  /* border: 1px solid #adb5bd; */
+  border: 1px solid #adb5bd;
   color: #ced4da;
 }
 

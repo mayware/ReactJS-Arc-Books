@@ -11,9 +11,7 @@ import React, { useEffect, useState } from 'react';
 function App() {
 
   const [cartItems, setCartItems] = useState([]);
-
-  const [searchUrl, setSearchUrl] = useState(`https://www.googleapis.com/books/v1/volumes?q=life&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchUrl, setSearchUrl] = useState(``);
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
@@ -44,9 +42,13 @@ function App() {
     localStorage.removeItem('cartItems');
   }
 
+  function searchBooks(term) {
+    setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
+  }
+
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeItem, clearBookshelf }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeItem, clearBookshelf, searchUrl, searchBooks }}>
       <Router>
         <div className="App">
           <Navbar />

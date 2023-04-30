@@ -1,16 +1,23 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
+import { useHistory } from 'react-router-dom';
 import CartContext from "../context/CartContext";
 import '../styles/navbar.css'
 
 const Navbar = () => {
-    const { cartItems } = useContext(CartContext);
-    const [counter, setCounter] = useState(null);
-    const [searchUrl, setSearchUrl] = useState(``);
-    const [searchTerm, setSearchTerm] = useState('');
 
-    function searchBooks() {
-        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm.toLowerCase()}&maxResults=10&&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
+    const { cartItems } = useContext(CartContext);
+    const { searchBooks } = useContext(CartContext);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [counter, setCounter] = useState(null);
+    const history = useHistory();
+
+
+    function navbarSearch() {
+        // window.location.href = '/search';
+        // history.push('/search');
+        searchBooks(searchTerm);
+        // setSearchTerm('');
     }
 
     useEffect(() => {
@@ -45,7 +52,7 @@ const Navbar = () => {
             <div className="navbar-right">
                 <div className="search-box">
                     <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="search-field" placeholder="Search.." />
-                    <button className="search-btn" onClick={searchBooks}>
+                    <button className="search-btn" onClick={() => { navbarSearch() }}>
                         <span className="material-symbols-outlined">search</span>
                     </button>
                 </div>
