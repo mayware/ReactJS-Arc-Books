@@ -38,7 +38,7 @@ const SearchArea = ({ paginPrev, paginNext, currentPage }) => {
         const term = searchParams.get('q');
         setResultTitle(term);
         searchBooks(term);
-    }, [location.search, currentPage]);
+    }, [location.search, currentPage, searchBooks]);
 
     return (
         <div className="content">
