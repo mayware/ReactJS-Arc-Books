@@ -12,6 +12,11 @@ function App() {
 
   const [cartItems, setCartItems] = useState([]);
   const [searchUrl, setSearchUrl] = useState(``);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  function changeCurrentPage() {
+    setCurrentPage(1);
+  }
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
@@ -43,15 +48,24 @@ function App() {
   }
 
   function searchBooks(term) {
-    setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
+    setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=${term}&startIndex=${(currentPage - 1) * 10}&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
   }
+
+  function paginPrev() {
+    setCurrentPage((prevPage) => prevPage - 1);
+  }
+
+  function paginNext() {
+    setCurrentPage((prevPage) => prevPage + 1);
+  }
+
 
 
   return (
     <CartContext.Provider value={{ cartItems, addToCart, removeItem, clearBookshelf, searchUrl, searchBooks }}>
       <Router>
         <div className="App">
-          <Navbar />
+          <Navbar changeCurrentPage={changeCurrentPage} />
           <div className="container">
             <Switch>
               <Route exact path="/">
@@ -67,7 +81,7 @@ function App() {
                 <BooksArea />
               </Route>
               <Route path="/search">
-                <SearchArea />
+                <SearchArea paginPrev={paginPrev} paginNext={paginNext} currentPage={currentPage} />
               </Route>
             </Switch>
           </div>

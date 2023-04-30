@@ -1,9 +1,10 @@
 import useFetch from "../useFetch";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import BooksList from "./BooksList";
 import BookModal from "./BookModal";
 import { useLocation } from 'react-router-dom';
 import Select from 'react-select'
+import CartContext from "../context/CartContext";
 // import Carousel from 'react-multi-carousel';
 
 const BooksArea = () => {

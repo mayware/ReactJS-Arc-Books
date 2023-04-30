@@ -4,20 +4,17 @@ import { useHistory } from 'react-router-dom';
 import CartContext from "../context/CartContext";
 import '../styles/navbar.css'
 
-const Navbar = () => {
+const Navbar = ({ changeCurrentPage }) => {
 
     const { cartItems } = useContext(CartContext);
-    const { searchBooks } = useContext(CartContext);
     const [searchTerm, setSearchTerm] = useState('');
     const [counter, setCounter] = useState(null);
     const history = useHistory();
 
-
     function navbarSearch() {
-        // window.location.href = '/search';
-        // history.push('/search');
-        searchBooks(searchTerm);
-        // setSearchTerm('');
+        history.push(`/search?q=${searchTerm}`);
+        setSearchTerm('');
+        changeCurrentPage();
     }
 
     useEffect(() => {
