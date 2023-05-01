@@ -8,21 +8,21 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    height: 91vh;
+    height: 100vh;
     background: #000;
-    color: #adb5bd;
 }
 
 .intro-banner-title {
     position: absolute;
-    top: 30%;
-    left: 35px;
-    font-size: 45px;
+    top: 35%;
+    left: 65px;
+    font-size: 55px;
     font-weight: 700;
+    color: #ced4da;
 }
 
 .intro-image {
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -80,6 +80,7 @@
     height: 100px;
     width: 100px;
     object-fit: cover;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 
 .app-information-section {
@@ -127,7 +128,7 @@
 .books-genres {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
+    gap: 15px;
     padding: .5rem;
     width: 950px;
     border-radius: 5px;
@@ -145,10 +146,10 @@
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
-    color: #101010;
+    color: #ced4da;
     border: 1px solid #343a40;
     border-radius: 5px;
-    background: #a98467;
+    background-image: linear-gradient(135deg, #536976 10%, #292E49 100%);
     transition: transform 0.2s ease-in-out;
 }
 

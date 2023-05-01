@@ -7,7 +7,7 @@ const Footer = () => {
 
             <div className='footer-left'>
                 <NavLink to="/" exact className="footer-brand-name-link">
-                    ArcBooks
+                    ArcBoox
                 </NavLink>
             </div>
             <div className="footer-middle">

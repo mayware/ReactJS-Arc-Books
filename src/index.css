@@ -20,15 +20,16 @@ body {
   flex-direction: column;
   min-height: 100vh;
   position: relative;
-  padding: 3.4rem 0 .5rem 0;
-  background-image: url('./assets/books-bg.jpg');
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .content {
   flex: 1;
+  background-image: url('./assets/books-bg.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin-top: 4rem;
 }
 
 .genres-header {
@@ -148,61 +149,6 @@ body {
 
 #allFilterBtn {
   margin-right: .5rem;
-}
-
-.search-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 200ms ease-in-out;
-}
-
-.search-field {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: 40px;
-  min-width: 25px;
-  width: 250px;
-  font-size: 14px;
-  padding: 0 1rem 0 1rem;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  border-top: 2px solid #101010;
-  border-left: 2px solid #101010;
-  border-right: 2px solid transparent;
-  border-bottom: 2px solid #101010;
-  background-color: rgba(0, 0, 0, .5);
-  color: #adb5bd;
-  transition: 200ms ease-in-out;
-}
-
-.search-field:focus {
-  outline: none;
-  border: 2px solid #00bbf9;
-  transition: 200ms ease-in-out;
-}
-
-.search-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 50px;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border-top: 2px solid #101010;
-  border-right: 2px solid #101010;
-  border-left: none;
-  border-bottom: 2px solid #101010;
-  background-color: rgba(0, 0, 0, .5);
-  color: #adb5bd;
-  cursor: pointer;
-}
-
-.search-box:hover>.search-btn {
-  color: #00bbf9;
-  transition: 200ms ease-in-out;
 }
 
 .books-track {

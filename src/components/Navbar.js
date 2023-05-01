@@ -30,37 +30,28 @@ const Navbar = ({ changeCurrentPage }) => {
                     </NavLink>
                 </div>
                 <div className="header-left-links">
-                    <NavLink
-                        to="/cart"
-                        exact
-                        className="nav-link"
-                        activeClassName="active"
-                    >
-                        <span className="material-symbols-outlined navbar-link-icon">
-                            shelves
-                        </span>
-                        {counter > 0 && <div className="cart-indicator">
-                            <span className="cart-indicator-counter">{counter}</span>
-                        </div>}
-                        <span className="navbar-link-span">Bookshelf</span>
-                    </NavLink>
+                    <div className="search-box">
+                        <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="search-field" placeholder="Search.." />
+                        <button className="search-btn" onClick={() => { navbarSearch() }}>
+                            <span className="material-symbols-outlined">search</span>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div className="navbar-right">
-                <div className="search-box">
-                    <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="search-field" placeholder="Search.." />
-                    <button className="search-btn" onClick={() => { navbarSearch() }}>
-                        <span className="material-symbols-outlined">search</span>
-                    </button>
-                </div>
                 <NavLink
-                    to="/log"
+                    to="/cart"
                     exact
                     className="nav-link"
                     activeClassName="active"
                 >
-                    <span className="material-symbols-outlined navbar-link-icon">share</span>
-                    <span className="navbar-link-span">Share</span>
+                    <span className="material-symbols-outlined navbar-link-icon">
+                        shelves
+                    </span>
+                    {counter > 0 && <div className="cart-indicator">
+                        <span className="cart-indicator-counter">{counter}</span>
+                    </div>}
+                    <span className="navbar-link-span">Bookshelf</span>
                 </NavLink>
             </div>
         </header>
