@@ -5,6 +5,7 @@ import donwload from '../assets/download.png'
 import share from '../assets/exchange.png'
 import google from '../assets/google-symbol.png'
 import api from '../assets/api.png'
+import intro from '../assets/intro-img.jpg'
 
 
 const Home = () => {
@@ -14,7 +15,10 @@ const Home = () => {
     return (
         <div className="home-content">
             <div className="intro-banner">
-                <h1>Welcome to ArcBoox</h1>
+                <span className='intro-banner-title'>Welcome to ArcBoox</span>
+                <div className="intro-image">
+                    <img src={intro} alt="intro-banner-img" className="intro-img" />
+                </div>
             </div>
             <main className="main-section">
                 <div className="app-instructions-section">

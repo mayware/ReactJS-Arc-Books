@@ -7,8 +7,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     height: 91vh;
-    background-image: linear-gradient(135deg, #09203f 10%, #537895 100%);
+    background: #000;
+    color: #adb5bd;
+}
+
+.intro-banner-title {
+    position: absolute;
+    top: 30%;
+    left: 35px;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.intro-image {
+    height: 100vh;
+    width: 100%;
+}
+
+.intro-img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
 }
 
 .main-section {
