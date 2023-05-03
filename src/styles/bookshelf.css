@@ -142,7 +142,7 @@
     transition: 200ms ease-in-out;
 }
 
-.cart-read-btn:hover {
+.shelf-read-btn:hover {
     background: #001d3d;
     color: #ffd60a;
     transition: 200ms ease-in-out;

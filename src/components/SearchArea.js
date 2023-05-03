@@ -50,22 +50,22 @@ const SearchArea = ({ paginPrev, paginNext, currentPage }) => {
                     </div>
                     {isPending && <div>Loading</div>}
                     {books && <BooksList books={books} modalBtn={modalBtn} showSnackBar={showSnackBar} />}
-                </div>
-                <div className="pagination">
-                    <button
-                        className="prev-btn"
-                        onClick={paginPrev}
-                        disabled={currentPage === 1}
-                    >
-                        <span className="material-symbols-outlined">navigate_before</span>
-                    </button>
-                    <button
-                        className="next-btn"
-                        onClick={paginNext}
-                        disabled={!books || books.totalItems <= currentPage * 40}
-                    >
-                        <span className="material-symbols-outlined">navigate_next</span>
-                    </button>
+                    <div className="pagination">
+                        <button
+                            className="prev-btn"
+                            onClick={paginPrev}
+                            disabled={currentPage === 1}
+                        >
+                            <span className="material-symbols-outlined">navigate_before</span>
+                        </button>
+                        <button
+                            className="next-btn"
+                            onClick={paginNext}
+                            disabled={!books || books.totalItems <= currentPage * 40}
+                        >
+                            <span className="material-symbols-outlined">navigate_next</span>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div className={`snackbar ${showSnack}`}> Added to the bookshelf</div>

@@ -18,7 +18,10 @@ const Home = () => {
         <div className="content">
             <div className="home-content">
                 <div className="intro-banner">
-                    <span className='intro-banner-title'>Welcome to ArcBoox</span>
+                    <div className="banner-message">
+                        <span className='intro-banner-title'>Welcome to <span className='arcboox-word'>ArcBoox</span></span>
+                        <span className="intro-banner-subtitle">Here you will find books for almost any genre</span>
+                    </div>
                     <div className="intro-image">
                         <img src={intro} alt="intro-banner-img" className="intro-img" />
                     </div>
@@ -30,13 +33,13 @@ const Home = () => {
                                 <div className="illustration-image">
                                     <img src={donwload} alt="illustration" className="illustration-img" />
                                 </div>
-                                <div className="info-section-text">ArcBoox allows users to download free of charge available books both in PDF and/or EPUB formats simply clicking on the given buttons given in the popups screens. The possiblity to fully read books or preview them</div>
+                                <div className="info-section-text">ArcBoox allows users to download free of charge available books both in PDF and/or EPUB formats simply clicking on the given buttons given in the popups screens. The possiblity to fully read books or preview them.</div>
                             </div>
                             <div className="info-section-illustration-1">
                                 <div className="illustration-image">
                                     <img src={share} alt="illustration" className="illustration-img" />
                                 </div>
-                                <div className="info-section-text">Users can also share the books that they found by clicking on the appropriate button. The possiblity to share throughout the social networks like Facebook, Twitter and Instagram</div>
+                                <div className="info-section-text">Users can also share the books that they discovered by clicking on the appropriate button. The possiblity to share throughout the social networks like Facebook, Twitter and Instagram.</div>
                             </div>
                         </div>
                     </div>
@@ -46,9 +49,10 @@ const Home = () => {
                                 <img src={google} alt="illustration" className="illustration-api-img" />
                                 <img src={api} alt="illustration" className="illustration-api-img" />
                             </div>
-                            <div className="info-section-text">We provide our website with books using popular free of charge Google Books API plan, which provide a huge variety of books, including magazines</div>
+                            <div className="info-section-text">We provide our website with books using popular free of charge Google Books API plan, which provides a huge variety of books, including magazines and brochures.</div>
                         </div>
                     </div>
+                    <div className="genre-info-manual">Pick your favorite genre</div>
                     <div className="genre-section">
                         <div className="books-genres">
                             <Link to={{ pathname: "/books", state: { genre: "computers" } }} className="genre-block-link" id='compBlock'>Computers</Link>

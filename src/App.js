@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Footer from './components/Footer'
 import Home from './components/Home';
-import Reader from './components/Reader';
 import Cart from './components/Cart';
 import BooksArea from './components/BooksArea';
 import CartContext from './context/CartContext';
@@ -70,9 +69,6 @@ function App() {
             <Switch>
               <Route exact path="/">
                 <Home />
-              </Route>
-              <Route path="/reader">
-                <Reader />
               </Route>
               <Route path="/cart">
                 <Cart />

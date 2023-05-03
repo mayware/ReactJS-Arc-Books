@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className="footer">
-
             <div className='footer-left'>
                 <NavLink to="/" exact className="footer-brand-name-link">
                     ArcBoox

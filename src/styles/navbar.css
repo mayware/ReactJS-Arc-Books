@@ -49,12 +49,12 @@
     font-size: 16px;
     font-weight: 500;
     margin: .5rem;
-    color: #adb5bd;
+    color: #ced4da;
     border: 1px solid #101010;
     border-radius: 5px;
     padding: .3rem .5rem .3rem .5rem;
     transition: 200ms ease-in-out;
-    background: #001d3d;
+    background: #003566;
 }
 
 .nav-link:hover {
