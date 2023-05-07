@@ -167,12 +167,17 @@
     width: 100%;
     border: none;
     border-radius: 5px;
-    background: #136f63;
+    background: #0ead69;
     font-size: 16px;
     font-weight: 700;
-    color: #ced4da;
+    color: #101010;
     cursor: pointer;
     text-decoration: none;
+    transition: 200ms ease-in-out;
+}
+
+.read-book-link:hover {
+    background: #fca311;
     transition: 200ms ease-in-out;
 }
 
@@ -193,6 +198,12 @@
     transition: 200ms ease-in-out;
 }
 
+.donwload-pdf-btn:hover {
+    background: #d62828;
+    color: #ced4da;
+    transition: 200ms ease-in-out;
+}
+
 .donwload-epub-btn {
     display: flex;
     align-items: center;
@@ -204,9 +215,14 @@
     background: #151515;
     font-size: 16px;
     font-weight: 500;
-    color: #adb5bd;
+    color: #ced4da;
     cursor: pointer;
     text-decoration: none;
+    transition: 200ms ease-in-out;
+}
+
+.donwload-epub-btn:hover {
+    background: #343a40;
     transition: 200ms ease-in-out;
 }
 

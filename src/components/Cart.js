@@ -12,7 +12,12 @@ const Cart = () => {
         removeItem(item);
     }
     const handleClear = () => {
-        clearBookshelf();
+        let confirmed = window.confirm("Are you sure you want clean your bookshelf ?");
+        if (!confirmed) {
+            return;
+        } else {
+            clearBookshelf();
+        }
     }
 
     return (

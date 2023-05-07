@@ -58,13 +58,14 @@
 }
 
 .nav-link:hover {
-    border-color: #adb5bd;
+    background: #0ead69;
+    color: #101010;
     transition: 200ms ease-in-out;
 }
 
 .nav-link.active {
-    border-color: #adb5bd;
-    color: #fca311;
+    background: #0ead69;
+    color: #101010;
 }
 
 .navbar-link-icon {
@@ -118,7 +119,7 @@
 
 .search-field:focus {
     outline: none;
-    border: 2px solid #00bbf9;
+    border-color: #0081a7;
     transition: 200ms ease-in-out;
 }
 
@@ -140,6 +141,6 @@
 }
 
 .search-box:hover>.search-btn {
-    color: #00bbf9;
+    color: #0081a7;
     transition: 200ms ease-in-out;
 }
