@@ -121,7 +121,7 @@ body {
   align-items: center;
   justify-content: center;
   color: #101010;
-  background: #003566;
+  background: #284b63;
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 0 .5rem 0 .5rem;
@@ -137,7 +137,7 @@ body {
 }
 
 .filter-btn:hover {
-  border-color: #adb5bd;
+  color: #adb5bd;
   transition: 200ms ease-in-out;
 }
 
