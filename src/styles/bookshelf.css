@@ -52,6 +52,8 @@
 }
 
 .bookshelf-header-title {
+    font-size: 24px;
+    font-weight: 700;
     color: #0081a7;
 }
 
@@ -192,4 +194,31 @@
 
 .btn-icon {
     margin-right: .5rem;
+}
+
+@media(max-width:768px) {
+    .book-shelves {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 1.5rem;
+    }
+}
+
+@media(max-width:480px) {
+    .bookshelf-header {
+        flex-direction: column;
+    }
+
+    .bookshelf-header-title {
+        margin-bottom: .5rem;
+        font-size: 20px;
+    }
+
+    .book-shelves {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 2.5rem;
+    }
 }

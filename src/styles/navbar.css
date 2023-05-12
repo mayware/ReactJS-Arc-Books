@@ -146,6 +146,10 @@
 }
 
 @media (max-width: 768px) {
+    .brand-name-link {
+        font-size: 24px;
+    }
+
     .search-field {
         width: 100px;
     }

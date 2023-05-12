@@ -32,7 +32,7 @@ const Cart = () => {
                 {cartItems.length > 0 ?
                     <div className="bookshelf">
                         <div className="bookshelf-header">
-                            <h2 className="bookshelf-header-title">Your bookshelf</h2>
+                            <span className="bookshelf-header-title">Your bookshelf</span>
                             <button className="clear-shelf-btn" onClick={() => handleClear()}>
                                 <span className="material-symbols-outlined btn-icon">mop</span>
                                 <span className="clear-btn-text">Clear bookshelf</span>
