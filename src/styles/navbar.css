@@ -144,3 +144,9 @@
     color: #0081a7;
     transition: 200ms ease-in-out;
 }
+
+@media (max-width: 768px) {
+    .search-field {
+        width: 100px;
+    }
+}

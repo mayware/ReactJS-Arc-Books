@@ -171,7 +171,7 @@ const BooksArea = () => {
                 </div>
             </div>
             <div className={`snackbar ${showSnack}`}> Added to the bookshelf</div>
-        </div >
+        </div>
     );
 }
 

@@ -52,7 +52,7 @@ const Home = () => {
                             <div className="info-section-text">We provide our website with books using popular free of charge Google Books API plan, which provides a huge variety of books, including magazines and brochures.</div>
                         </div>
                     </div>
-                    <div className="genre-info-manual">Pick your favorite genre</div>
+                    {/* <div className="genre-info-manual">Pick your favorite genre</div> */}
                     <div className="genre-section">
                         <div className="books-genres">
                             <Link to={{ pathname: "/books", state: { genre: "computers" } }} className="genre-block-link" id='compBlock'>Computers</Link>
