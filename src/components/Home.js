@@ -20,7 +20,7 @@ const Home = () => {
                 <div className="intro-banner">
                     <div className="banner-message">
                         <span className='intro-banner-title'>Welcome to <span className='arcboox-word'>ArcBoox</span></span>
-                        <span className="intro-banner-subtitle">Here you will find books for almost any genre</span>
+                        <span className="intro-banner-subtitle">It's never too late to start reading</span>
                     </div>
                     <div className="intro-image">
                         <img src={intro} alt="intro-banner-img" className="intro-img" />
