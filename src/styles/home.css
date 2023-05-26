@@ -77,7 +77,7 @@
     justify-content: center;
     padding: 2rem;
     height: 200px;
-    width: 700px;
+    max-width: 700px;
 }
 
 .illustration-image {
@@ -278,10 +278,11 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        width: 100%;
     }
 
     .books-genres {
-        width: 600px;
+        /* width: 600px; */
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -301,5 +302,11 @@
     #educationBlock,
     #historyBlock {
         grid-column: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    .books-genres {
+        grid-template-columns: 1fr;
     }
 }

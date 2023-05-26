@@ -46,3 +46,19 @@
     color: #adb5bd;
     transition: 200ms ease-in-out;
 }
+
+@media(max-width:560px) {
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 150px;
+    }
+
+    .footer-left,
+    .footer-middle,
+    .footer-right {
+        margin-bottom: .5rem;
+    }
+}
