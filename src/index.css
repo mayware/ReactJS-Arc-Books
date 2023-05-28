@@ -163,12 +163,12 @@ body {
   margin: .5rem;
   width: 200px;
   border-radius: 5px;
-  box-shadow: 0px 0px 15px #001d3d;
+  box-shadow: 0px 0px 15px #003566;
   transition: 200ms ease-in-out;
 }
 
 .book-entity:hover {
-  box-shadow: 0px 0px 15px #654E92;
+  box-shadow: 0px 0px 15px #0077b6;
   transition: 200ms ease-in-out;
 }
 

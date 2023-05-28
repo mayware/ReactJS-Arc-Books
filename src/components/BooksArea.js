@@ -140,7 +140,7 @@ const BooksArea = () => {
                                 <div className="review-filter-btns">
                                     <button className={`filter-btn ${bookFilter === 'partial' ? 'active' : ''}`} id="allFilterBtn" onClick={filterAllBooks}>
                                         <span className="material-symbols-outlined">library_books</span>
-                                        <span className="filter-btn-text">Partial</span>
+                                        <span className="filter-btn-text">Partial review</span>
                                     </button>
                                     <button className={`filter-btn ${bookFilter === 'full' ? 'active' : ''}`} onClick={filterReadableBooks}>
                                         <span className="material-symbols-outlined">auto_stories</span>
