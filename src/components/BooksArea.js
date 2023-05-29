@@ -12,7 +12,7 @@ const BooksArea = () => {
     const [bookFilter, setBookFilter] = useState('partial');
     const location = useLocation();
     const genre = location.state.genre;
-    const [searchUrl, setSearchUrl] = useState(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 12}&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
+    const [searchUrl, setSearchUrl] = useState(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 20}&maxResults=10&key=AIzaSyD2wDUQrHWijCmYof8fR2BexK8uxs_ZZ0c`);
     const { data: books, isPending, error } = useFetch(searchUrl);
     const [genreTitle, setGenreTitle] = useState(genre);
     const [showSnack, setShowSnack] = useState('');
@@ -21,9 +21,9 @@ const BooksArea = () => {
         const storedGenre = localStorage.getItem('selectedGenre');
         if (storedGenre) {
             setGenreTitle(storedGenre);
-            setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=subject:${storedGenre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 10}&maxResults=12`);
+            setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=subject:${storedGenre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 20}&maxResults=20`);
         } else {
-            setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 10}&maxResults=12`);
+            setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}&filter=${bookFilter}&startIndex=${(currentPage - 1) * 20}&maxResults=20`);
             setGenreTitle(genre);
         }
     }, [genre, bookFilter, currentPage]);
@@ -57,7 +57,7 @@ const BooksArea = () => {
 
     function switchGenre(option) {
         localStorage.setItem('selectedGenre', option);
-        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=subject:${option}&filter=${bookFilter}&startIndex=0&maxResults=12`);
+        setSearchUrl(`https://www.googleapis.com/books/v1/volumes?q=subject:${option}&filter=${bookFilter}&startIndex=0&maxResults=20`);
         setCurrentPage(1);
         setGenreTitle(option);
     }
