@@ -6,6 +6,7 @@ import Cart from './components/Cart';
 import BooksArea from './components/BooksArea';
 import CartContext from './context/CartContext';
 import SearchArea from './components/SearchArea';
+import Login from './components/Login';
 import React, { useEffect, useState } from 'react';
 function App() {
 
@@ -67,6 +68,9 @@ function App() {
           <Navbar changeCurrentPage={changeCurrentPage} />
           <div className="container">
             <Switch>
+              <Route exact path="/login">
+                <Login />
+              </Route>
               <Route exact path="/">
                 <Home />
               </Route>

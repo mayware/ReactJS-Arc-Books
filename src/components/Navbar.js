@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { useHistory } from 'react-router-dom';
 import CartContext from "../context/CartContext";
@@ -39,6 +39,7 @@ const Navbar = ({ changeCurrentPage }) => {
                 </div>
             </div>
             <div className="navbar-right">
+                <NavLink to="/login" exact>Login</NavLink>
                 <NavLink
                     to="/cart"
                     exact
