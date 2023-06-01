@@ -39,7 +39,6 @@ const Navbar = ({ changeCurrentPage }) => {
                 </div>
             </div>
             <div className="navbar-right">
-                <NavLink to="/login" exact>Login</NavLink>
                 <NavLink
                     to="/cart"
                     exact
@@ -54,6 +53,28 @@ const Navbar = ({ changeCurrentPage }) => {
                     </div>}
                     <span className="navbar-link-span">Bookshelf</span>
                 </NavLink>
+                <NavLink to="/login" exact className="nav-link login-link">
+                    <span class="material-symbols-outlined navbar-link-icon">account_circle</span>
+                    <span className="navbar-link-span">Account</span>
+                </NavLink>
+                <div className="nav-dropdown">
+                    <div className="dropdown-box">
+                        <ul className="dropdown-menu">
+                            <li className="menu-item">
+                                <a href="#" className="drop-item">
+                                    <span className="drop-item-text">Log in</span>
+                                    <span class="material-symbols-outlined">login</span>
+                                </a>
+                            </li>
+                            <li className="menu-item">
+                                <a href="#" className="drop-item">
+                                    <span className="drop-item-text">Log out</span>
+                                    <span class="material-symbols-outlined">logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </header>
     );
