@@ -11,6 +11,7 @@ const Navbar = ({ changeCurrentPage }) => {
     const [counter, setCounter] = useState(null);
     const [showDropdown, setShowDropdown] = useState(false);
     const dropdownRef = useRef(null);
+    const dropdownBtnRef = useRef(null);
     const history = useHistory();
 
     function navbarSearch() {
@@ -21,20 +22,29 @@ const Navbar = ({ changeCurrentPage }) => {
 
     useEffect(() => {
         const handleOutsideClick = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target) &&
+                !dropdownBtnRef.current.contains(event.target)
+            ) {
                 setShowDropdown(false);
             }
         };
 
-        window.addEventListener('mousedown', handleOutsideClick);
-
+        window.addEventListener('mouseup', handleOutsideClick);
         return () => {
-            window.removeEventListener('mousedown', handleOutsideClick);
+            window.removeEventListener('mouseup', handleOutsideClick);
         };
     }, []);
 
-    function dropdownBtn() {
+    function dropdownBtn(event) {
+        event.stopPropagation();
         setShowDropdown(!showDropdown);
+    }
+    const handleLoginLinkClick = () => {
+        setTimeout(() => {
+            setShowDropdown(false);
+        }, 100);
     }
 
     useEffect(() => {
@@ -73,27 +83,34 @@ const Navbar = ({ changeCurrentPage }) => {
                     </div>}
                     <span className="navbar-link-span">Bookshelf</span>
                 </NavLink>
-                <button className="navbar-dropdown-btn" onClick={dropdownBtn}>
+                <button className="navbar-dropdown-btn" onClick={dropdownBtn} ref={dropdownBtnRef}>
                     <span className="material-symbols-outlined">account_circle</span>
                 </button>
                 {showDropdown && (
-                    <div className="nav-dropdown" ref={dropdownRef}>
-                        <div className="dropdown-box">
-                            <ul className="dropdown-menu">
-                                <li className="menu-item">
-                                    <NavLink to="/login" exact className="login-link">
-                                        <span className="drop-item-text">Log in</span>
-                                        <span className="material-symbols-outlined">login</span>
-                                    </NavLink>
-                                </li>
-                                <li className="menu-item">
-                                    <NavLink to="/login" exact className="login-link">
-                                        <span className="drop-item-text">Log out</span>
-                                        <span className="material-symbols-outlined">logout</span>
-                                    </NavLink>
-                                </li>
-                            </ul>
-                        </div>
+                    <div className="dropdown-box" ref={dropdownRef}>
+                        <ul className="dropdown-menu">
+                            <li className="menu-item">
+                                <NavLink
+                                    to="/login"
+                                    exact
+                                    className="login-link"
+                                    onClick={handleLoginLinkClick}
+                                >
+                                    <span className="drop-item-text">Log in</span>
+                                    <span className="material-symbols-outlined">login</span>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink
+                                    to="/login"
+                                    exact className="login-link"
+                                    onClick={handleLoginLinkClick}
+                                >
+                                    <span className="drop-item-text">Log out</span>
+                                    <span className="material-symbols-outlined">logout</span>
+                                </NavLink>
+                            </li>
+                        </ul>
                     </div>
                 )}
             </div>

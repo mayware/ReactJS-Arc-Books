@@ -164,15 +164,10 @@
     transition: 200ms ease-in-out;
 }
 
-.nav-dropdown {
-    display: block;
-    position: relative;
-}
-
 .dropdown-box {
     position: absolute;
-    top: 25px;
-    right: 0;
+    top: 55px;
+    right: 24px;
     width: 150px;
     padding: .5rem;
     border: 1px solid #343a40;
