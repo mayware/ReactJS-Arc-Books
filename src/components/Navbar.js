@@ -47,6 +47,10 @@ const Navbar = ({ changeCurrentPage }) => {
         }, 100);
     }
 
+    function onChanger(e) {
+        setSearchTerm(e.target.value);
+    }
+
     useEffect(() => {
         setCounter(cartItems.length);
     }, [cartItems]);
@@ -61,7 +65,7 @@ const Navbar = ({ changeCurrentPage }) => {
                 </div>
                 <div className="header-left-links">
                     <div className="search-box">
-                        <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="search-field" placeholder="Search.." />
+                        <input type="text" value={searchTerm} onChange={onChanger} className="search-field" placeholder="Search.." />
                         <button className="search-btn" onClick={() => { navbarSearch() }}>
                             <span className="material-symbols-outlined">search</span>
                         </button>
