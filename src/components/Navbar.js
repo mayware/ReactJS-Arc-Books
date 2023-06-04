@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState, useEffect, useContext, useRef } from "react";
 import { useHistory } from 'react-router-dom';
 import CartContext from "../context/CartContext";
@@ -12,6 +12,7 @@ const Navbar = ({ changeCurrentPage }) => {
     const [showDropdown, setShowDropdown] = useState(false);
     const dropdownRef = useRef(null);
     const dropdownBtnRef = useRef(null);
+    const searchBoxRef = useRef();
     const history = useHistory();
 
     function navbarSearch() {
@@ -21,6 +22,7 @@ const Navbar = ({ changeCurrentPage }) => {
     }
 
     useEffect(() => {
+        searchBoxRef.current.focus();
         const handleOutsideClick = (event) => {
             if (
                 dropdownRef.current &&
@@ -65,7 +67,7 @@ const Navbar = ({ changeCurrentPage }) => {
                 </div>
                 <div className="header-left-links">
                     <div className="search-box">
-                        <input type="text" value={searchTerm} onChange={onChanger} className="search-field" placeholder="Search.." />
+                        <input type="text" value={searchTerm} onChange={onChanger} ref={searchBoxRef} className="search-field" placeholder="Search.." />
                         <button className="search-btn" onClick={() => { navbarSearch() }}>
                             <span className="material-symbols-outlined">search</span>
                         </button>
