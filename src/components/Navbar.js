@@ -15,6 +15,8 @@ const Navbar = ({ changeCurrentPage }) => {
     const searchBoxRef = useRef();
     const history = useHistory();
 
+    const disabledBtn = searchTerm.length < 4;
+
     function navbarSearch() {
         history.push(`/search?q=${searchTerm}`);
         setSearchTerm('');
@@ -68,7 +70,7 @@ const Navbar = ({ changeCurrentPage }) => {
                 <div className="header-left-links">
                     <div className="search-box">
                         <input type="text" value={searchTerm} onChange={onChanger} ref={searchBoxRef} className="search-field" placeholder="Search.." />
-                        <button className="search-btn" onClick={() => { navbarSearch() }}>
+                        <button disabled={disabledBtn} className="search-btn" onClick={() => { navbarSearch() }}>
                             <span className="material-symbols-outlined">search</span>
                         </button>
                     </div>
