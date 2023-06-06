@@ -18,13 +18,27 @@
 .search-store-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 55px;
     padding: 0 2.5rem 0 2.5rem;
     width: 100%;
+    text-align: left;
     margin-bottom: .5rem;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: 1px solid #343a40;
     background: #2f3e46;
+
+}
+
+.seach-store-header-text {
+    margin-right: 1rem;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ced4da;
+}
+
+.search-store-term {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffd60a;
 }

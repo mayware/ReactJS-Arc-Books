@@ -68,10 +68,10 @@ function App() {
           <Navbar changeCurrentPage={changeCurrentPage} />
           <div className="container">
             <Switch>
-              <Route exact path="/login">
+              <Route exact path="/">
                 <Login />
               </Route>
-              <Route exact path="/">
+              <Route path="/home">
                 <Home />
               </Route>
               <Route path="/cart">

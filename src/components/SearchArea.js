@@ -46,7 +46,8 @@ const SearchArea = ({ paginPrev, paginNext, currentPage }) => {
             <div className="search-results-area">
                 <div className="search-store">
                     <div className="search-store-header">
-                        Results for: {resultTitle}
+                        <span className='seach-store-header-text'>Results for:</span>
+                        <span className='search-store-term'>{resultTitle}</span>
                     </div>
                     {isPending && <div>Loading</div>}
                     {books && <BooksList books={books} modalBtn={modalBtn} showSnackBar={showSnackBar} />}

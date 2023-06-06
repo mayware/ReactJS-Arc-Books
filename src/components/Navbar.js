@@ -97,7 +97,7 @@ const Navbar = ({ changeCurrentPage }) => {
                 {showDropdown && (
                     <div className="dropdown-box" ref={dropdownRef}>
                         <ul className="dropdown-menu">
-                            <li className="menu-item">
+                            {/* <li className="menu-item">
                                 <NavLink
                                     to="/login"
                                     exact
@@ -107,7 +107,7 @@ const Navbar = ({ changeCurrentPage }) => {
                                     <span className="drop-item-text">Log in</span>
                                     <span className="material-symbols-outlined">login</span>
                                 </NavLink>
-                            </li>
+                            </li> */}
                             <li className="menu-item">
                                 <NavLink
                                     to="/login"
