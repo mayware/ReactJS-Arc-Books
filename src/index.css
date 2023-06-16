@@ -27,9 +27,7 @@ body {
 }
 
 .content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   flex: 1;
   height: 1005;
   margin-top: 4rem;

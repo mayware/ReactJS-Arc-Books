@@ -6,7 +6,6 @@ import Cart from './components/Cart';
 import BooksArea from './components/BooksArea';
 import CartContext from './context/CartContext';
 import SearchArea from './components/SearchArea';
-import Login from './components/Login';
 import React, { useEffect, useState } from 'react';
 function App() {
 
@@ -69,9 +68,6 @@ function App() {
           <div className="container">
             <Switch>
               <Route exact path="/">
-                <Login />
-              </Route>
-              <Route path="/home">
                 <Home />
               </Route>
               <Route path="/cart">
