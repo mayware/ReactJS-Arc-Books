@@ -91,36 +91,6 @@ const Navbar = ({ changeCurrentPage }) => {
                     </div>}
                     <span className="navbar-link-span">Bookshelf</span>
                 </NavLink>
-                <button className="navbar-dropdown-btn" onClick={dropdownBtn} ref={dropdownBtnRef}>
-                    <span className="material-symbols-outlined">account_circle</span>
-                </button>
-                {showDropdown && (
-                    <div className="dropdown-box" ref={dropdownRef}>
-                        <ul className="dropdown-menu">
-                            {/* <li className="menu-item">
-                                <NavLink
-                                    to="/login"
-                                    exact
-                                    className="login-link"
-                                    onClick={handleLoginLinkClick}
-                                >
-                                    <span className="drop-item-text">Log in</span>
-                                    <span className="material-symbols-outlined">login</span>
-                                </NavLink>
-                            </li> */}
-                            <li className="menu-item">
-                                <NavLink
-                                    to="/login"
-                                    exact className="login-link"
-                                    onClick={handleLoginLinkClick}
-                                >
-                                    <span className="drop-item-text">Log out</span>
-                                    <span className="material-symbols-outlined">logout</span>
-                                </NavLink>
-                            </li>
-                        </ul>
-                    </div>
-                )}
             </div>
         </header>
     );
