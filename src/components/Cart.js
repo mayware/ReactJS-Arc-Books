@@ -51,7 +51,7 @@ const Cart = () => {
                                                 className="shelf-book-cover-img" />
                                         </div>
                                         <span className="shelf-book-title">{item.volumeInfo.title}</span>
-                                        <a href={item.volumeInfo.previewLink} className="shelf-read-btn">Read this book</a>
+                                        <a href={item.volumeInfo.previewLink} target="_blank" className="shelf-read-btn">Read this book</a>
                                     </div>
                                 </div>
                             ))}
