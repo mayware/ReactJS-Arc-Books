@@ -1,8 +1,11 @@
 .content-bookshelf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    min-height: 700px;
-    width: 750px;
-    margin: 2rem;
+    min-height: 550px;
+    padding: 1rem;
+    border: 1px solid #fff;
 }
 
 .back-btn {
@@ -35,6 +38,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 750px;
     box-shadow: 0px 0px 55px #000;
 }
 

@@ -30,6 +30,7 @@ body {
   flex: 1;
   height: 1005;
   margin-top: 4rem;
+  position: relative;
 }
 
 .genres-header {
